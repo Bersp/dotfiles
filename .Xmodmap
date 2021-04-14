@@ -1,0 +1,14 @@
+! keycode  38 = a A aacute Aacute ae AE ae
+! keycode  26 = e E eacute Eacute EuroSign cent EuroSign
+! keycode  31 = i I iacute Iacute rightarrow idotless rightarrow
+! keycode  32 = o O oacute Oacute oslash Oslash oslash
+! keycode  30 = u U uacute Uacute downarrow uparrow downarrow
+! keycode  57 = n N ntilde Ntilde n N n
+! keycode  26 = e E acute Eacute EuroSign cent EuroSign
+! Maps the Mode key to the Alt key
+keycode 64 = Multi_key
+
+! Capslock to Super
+remove Lock = Caps_Lock
+keysym Caps_Lock = Super_L
+add Lock = Caps_Lock

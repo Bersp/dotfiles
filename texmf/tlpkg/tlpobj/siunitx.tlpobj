@@ -1,0 +1,44 @@
+name siunitx
+category Package
+revision 53914
+shortdesc A comprehensive (SI) units package
+longdesc Typesetting values with units requires care to ensure that the
+longdesc combined mathematical meaning of the value plus unit
+longdesc combination is clear. In particular, the SI units system lays
+longdesc down a consistent set of units with rules on how they are to be
+longdesc used. However, different countries and publishers have
+longdesc differing conventions on the exact appearance of numbers (and
+longdesc units). A number of LaTeX packages have been developed to
+longdesc provide consistent application of the various rules: SIunits,
+longdesc sistyle, unitsdef and units are the leading examples. The
+longdesc numprint package provides a large number of number-related
+longdesc functions, while dcolumn and rccol provide tools for
+longdesc typesetting tabular numbers. The siunitx package takes the best
+longdesc from the existing packages, and adds new features and a
+longdesc consistent interface. A number of new ideas have been
+longdesc incorporated, to fill gaps in the existing provision. The
+longdesc package also provides backward-compatibility with SIunits,
+longdesc sistyle, unitsdef and units. The aim is to have one package to
+longdesc handle all of the possible unit-related needs of LaTeX users.
+longdesc The package relies on LaTeX 3 support from the l3kernel and
+longdesc l3packages bundles.
+depend l3kernel
+depend l3packages
+containersize 34760
+containerchecksum 371fabf3b76239174c7f2f0cb6bf123b7fbb224261e07460d1620459578fd12a400f8e4babd43637afa9b917a39050c11973f4db8dd5ef17a6cdcd172eca245b
+doccontainersize 629508
+doccontainerchecksum e0b8c3dbafa6cebf1aa344c6d99bb17a532201c198bbb6e9f73319e6653bb8ede2243ba0bdaa57074d8c374b31d45659f3e803680eafde37797085a8edada8f9
+srccontainersize 103376
+srccontainerchecksum ac85900c379cc0c2b052685c02d0a684e24016333b4ae8072ee390e213aaa3204b35faa74052cb8d6716064daddcb940afaf4905cf3145c02e2436fce7af88e1
+runfiles size=78
+ tex/latex/siunitx/siunitx-abbreviations.cfg
+ tex/latex/siunitx/siunitx-binary.cfg
+ tex/latex/siunitx/siunitx-version-1.cfg
+ tex/latex/siunitx/siunitx.sty
+catalogue-contact-bugs https://github.com/josephwright/siunitx/issues
+catalogue-contact-home https://www.texdev.net
+catalogue-contact-repository https://github.com/josephwright/siunitx
+catalogue-ctan /macros/latex/contrib/siunitx
+catalogue-license lppl1.3c
+catalogue-topics units scientific-docs expl3
+catalogue-version 2.8b

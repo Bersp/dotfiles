@@ -1,0 +1,19 @@
+name import
+category Package
+revision 54683
+shortdesc Establish input relative to a directory
+longdesc The commands \import{full_path}{file} and
+longdesc \subimport{path_extension}{file} set up input through standard
+longdesc LaTeX mechanisms (\input, \include and \includegraphics) to
+longdesc load files relative to the \import-ed directory. There are also
+longdesc \includefrom, \subincludefrom, and * variants of the commands.
+containersize 2712
+containerchecksum 96a92584b4ff4a4bd3b345b446f2802e34d59ebf8c14469a5b5331e6d2f92b63f42d8f5799bdcefc9ae3f74e5e6f93aad7d5371dbe7d21e84ced3890a76c7a19
+doccontainersize 246512
+doccontainerchecksum 967d456dd18c8838db7d2ed64016fa0f77f2ed475e5cbe36389414849786d7e7850ea43e8bb00d8aa06e3ba06f62970a6525ee1b5a5109f8cbc77a0baf894b50
+runfiles size=2
+ tex/latex/import/import.sty
+catalogue-ctan /macros/latex/contrib/import
+catalogue-license pd
+catalogue-topics file-control
+catalogue-version 6.2

@@ -1,0 +1,21 @@
+name transparent
+category Package
+revision 52981
+shortdesc Using a color stack for transparency with pdfTeX
+longdesc Since version 1.40 pdfTeX supports several color stacks; the
+longdesc package uses a separate colour stack for control of
+longdesc transparency (which is not, of course, a colour).
+containersize 1992
+containerchecksum a1b545dee3fc210d9ff39c9ad1e8015c3972b2f1655e40f828d3bca0d8ae759772e18fd180cec5fa88d45f48076d92d07bebf2e03ef26745ad53a2fd8581d9cf
+doccontainersize 266624
+doccontainerchecksum 7de04001cea582db36ed0fb0b5f8382a367603d8ce8327d29d773d05af116ae76adddd678b220d2df8abf7c6c619bee9f050f51c5aa255d7b0fb9b576638e049
+srccontainersize 5448
+srccontainerchecksum 73a5f575a644334ee5a61f740c4f5f2e09a10ee0c4c5732be70809f66f67fddc5979bafe4a7fcd8a2462e0dec2b98867e9ba1ff2d82e3be9743ecf5773cd5ab8
+runfiles size=2
+ tex/latex/transparent/transparent.sty
+catalogue-contact-bugs https://github.com/ho-tex/transparent/issues
+catalogue-contact-repository https://github.com/ho-tex/transparent
+catalogue-ctan /macros/latex/contrib/transparent
+catalogue-license lppl1.3
+catalogue-topics typesetting
+catalogue-version 1.4

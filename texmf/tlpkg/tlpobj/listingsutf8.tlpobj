@@ -1,0 +1,24 @@
+name listingsutf8
+category Package
+revision 53097
+shortdesc Allow UTF-8 in listings input
+longdesc Package listings does not support files with multi-byte
+longdesc encodings such as UTF-8. In the case of \lstinputlisting, a
+longdesc simple workaround is possible if a one-byte encoding exists
+longdesc that the file can be converted to. The package requires the
+longdesc e-TeX extensions under pdfTeX (in either PDF or DVI output
+longdesc mode).
+containersize 2264
+containerchecksum 846cc046ced340cafd98f009a55e891bfa6bd5715c94c0dbd5b124599c8e3aed1f248f56592795184fa040285001b0d967dfb26b0fb764bdfadcc2eabe8c3122
+doccontainersize 299004
+doccontainerchecksum fd15657a8c7e8af4d21721f64ee0c2a77606d965698fdfeb581116f3b13dbf95bf774b77f019bef4cdb4565cd1957cf040818b1d9f78425eecfccc48ab6c5e28
+srccontainersize 5628
+srccontainerchecksum 9ee30440400c6cba5726ad3e15e0044fb18b74613237da64eca9e188246193b6e0ac205af9a3e7e1b566503330a85bf6507db7c3ac4caba6c31033f9f87404e2
+runfiles size=2
+ tex/latex/listingsutf8/listingsutf8.sty
+catalogue-contact-bugs https://github.com/ho-tex/listingsutf8/issues
+catalogue-contact-repository https://github.com/ho-tex/listingsutf8
+catalogue-ctan /macros/latex/contrib/listingsutf8
+catalogue-license lppl1.3
+catalogue-topics listing synt-hlt utf8-adapt
+catalogue-version 1.5

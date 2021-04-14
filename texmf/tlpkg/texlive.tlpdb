@@ -1,0 +1,573 @@
+name 00texlive.installation
+category TLCore
+depend opt_location:http://mirrors.rit.edu/CTAN/systems/texlive/tlnet
+depend setting_available_architectures:
+depend setting_usertree:1
+
+name cancel
+category Package
+revision 32508
+shortdesc Place lines through maths formulae
+longdesc A package to draw diagonal lines ("cancelling" a term) and
+longdesc arrows with limits (cancelling a term "to a value") through
+longdesc parts of maths formulae.
+containersize 2904
+containerchecksum ac6e6b642dde29e32e45d7a0e967370c1f7a6ce604075cd43c57b1ee002e75adbe4fbc81de30e8d252cd58f2ac091503595a433c5de898deb3bfbdbb6f2d2e62
+doccontainersize 261244
+doccontainerchecksum 5af252a521c1976166db248c4c19d4fcadd32ec9801e0cd42b73e0a3a0adc461b88d765b90dec1af859474fc64bc00cbc8be44450cb4da6b43944c8fc46ba670
+runfiles size=2
+ tex/latex/cancel/cancel.sty
+catalogue-ctan /macros/latex/contrib/cancel
+catalogue-license pd
+catalogue-topics maths
+catalogue-version 2.2
+
+name environ
+category Package
+revision 56615
+shortdesc A new interface for environments in LaTeX
+longdesc The package provides the \collect@body command (as in amsmath),
+longdesc as well as a \long version \Collect@Body, for collecting the
+longdesc body text of an environment. These commands are used to define
+longdesc a new author interface to creating new environments. For
+longdesc example, \NewEnviron{test}, wraps the entire environment body
+longdesc in square brackets, doing the right thing in ignoring leading
+longdesc and trailing spaces.
+depend trimspaces
+containersize 1884
+containerchecksum c8dec70e56651a89ae8da15abc0ad81cc2edb4487837469238e2adc0e7c58cae4c5da82b637a3336839b50103e3d846c5cee8c73141488f644469a0f3e9d363f
+doccontainersize 156300
+doccontainerchecksum 78d4d3f570470619c938687a6c9a6925aad901d781e3e893bd731a49bb8eca62bf1870e68d84f7125e10d91d7bec02a323ae42278ff59c04d7e33eefa2261496
+srccontainersize 6420
+srccontainerchecksum b30607d21bbf5ddf1c7d36bd9173a16d91bdfcfa004782be50e50f17bf54d94e943d5e524e2331b75f3ce65e81193ba98e69ab56c38959d632007f5b0a87bd6a
+runfiles size=2
+ tex/latex/environ/environ.sty
+catalogue-ctan /macros/latex/contrib/environ
+catalogue-license lppl
+catalogue-topics macro-supp
+catalogue-version 0.3
+
+name esint
+category Package
+revision 52240
+shortdesc Extended set of integrals for Computer Modern
+longdesc The esint package permits access to alternate integral symbols
+longdesc when you are using the Computer Modern fonts. In the original
+longdesc set, several integral symbols are missing, such as \oiint. Many
+longdesc of these symbols are available in other font sets (pxfonts,
+longdesc txfonts, etc.), but there is no good solution if you want to
+longdesc use Computer Modern. The package provides Metafont source and
+longdesc LaTeX macro support.
+containersize 5760
+containerchecksum d0eda90d6a890b7813648516f21e3a88213b1374df0c418895301354de402b9634492a1fd89193f34c6db6b9fcc0cdd0f8f46472e0e3a210234c7d8cab1bbed8
+doccontainersize 58132
+doccontainerchecksum aeeaafe3746b8fd75ba80fc36b1610a3e4f7c7f26044ca82c2c8091139e0294275a1dde9dd73fb3e5b013ff04e4d0f26422e8c2a44a88beab167353e7686b3fe
+srccontainersize 6560
+srccontainerchecksum 242e864b822f5deac76740d7a00edab9b6ff77e260b3e1adb6676dda009a8c200b9352e87998b76ac3047f0eacb9bd5ef87ac554c7c20ae649e91f1fcad889b2
+runfiles size=18
+ fonts/source/public/esint/bigint.mf
+ fonts/source/public/esint/esint10.mf
+ fonts/source/public/esint/mathint.mf
+ fonts/tfm/public/esint/esint10.tfm
+ tex/latex/esint/esint.sty
+ tex/latex/esint/uesint.fd
+catalogue-also esint-type1
+catalogue-ctan /macros/latex/contrib/esint
+catalogue-license lppl
+catalogue-topics font font-symbol-maths font-mf font-supp
+catalogue-version 1.2d
+
+name graphviz
+category Package
+revision 31517
+shortdesc Write graphviz (dot+neato) inline in LaTeX documents
+longdesc The package allows inline use of graphviz code, in a LaTeX
+longdesc document.
+containersize 1940
+containerchecksum 9065f2316f423697c8f815ddcf91254f22e44d89964196d971c3a42192bb1e20f9152c5a98375060daffbb295f8885899d2800728de31ecf60e1a25cf7bce31e
+doccontainersize 88484
+doccontainerchecksum 688f17db6771785753797edccd141470517dbb2ee875e2a70769754bbd314cf8af46b3dd89d5c340e7da7d81d86895894baa2b9e8facc0a54ad91cd1a3947722
+srccontainersize 6124
+srccontainerchecksum c3e4fc091b5b64924e886435667049ec2dbf91c20fd7d1678f40990e66aa9d94fd7b40b30dd359be0fd1fba0e169b29058337ede8232189dad3dab7bb34af869
+runfiles size=1
+ tex/latex/graphviz/graphviz.sty
+catalogue-also dottex
+catalogue-contact-home http://www.graphviz.org
+catalogue-ctan /macros/latex/contrib/graphviz
+catalogue-license lppl1.3
+catalogue-topics graphics-inline
+catalogue-version 0.94
+
+name import
+category Package
+revision 54683
+shortdesc Establish input relative to a directory
+longdesc The commands \import{full_path}{file} and
+longdesc \subimport{path_extension}{file} set up input through standard
+longdesc LaTeX mechanisms (\input, \include and \includegraphics) to
+longdesc load files relative to the \import-ed directory. There are also
+longdesc \includefrom, \subincludefrom, and * variants of the commands.
+containersize 2712
+containerchecksum 96a92584b4ff4a4bd3b345b446f2802e34d59ebf8c14469a5b5331e6d2f92b63f42d8f5799bdcefc9ae3f74e5e6f93aad7d5371dbe7d21e84ced3890a76c7a19
+doccontainersize 246512
+doccontainerchecksum 967d456dd18c8838db7d2ed64016fa0f77f2ed475e5cbe36389414849786d7e7850ea43e8bb00d8aa06e3ba06f62970a6525ee1b5a5109f8cbc77a0baf894b50
+runfiles size=2
+ tex/latex/import/import.sty
+catalogue-ctan /macros/latex/contrib/import
+catalogue-license pd
+catalogue-topics file-control
+catalogue-version 6.2
+
+name listingsutf8
+category Package
+revision 53097
+shortdesc Allow UTF-8 in listings input
+longdesc Package listings does not support files with multi-byte
+longdesc encodings such as UTF-8. In the case of \lstinputlisting, a
+longdesc simple workaround is possible if a one-byte encoding exists
+longdesc that the file can be converted to. The package requires the
+longdesc e-TeX extensions under pdfTeX (in either PDF or DVI output
+longdesc mode).
+containersize 2264
+containerchecksum 846cc046ced340cafd98f009a55e891bfa6bd5715c94c0dbd5b124599c8e3aed1f248f56592795184fa040285001b0d967dfb26b0fb764bdfadcc2eabe8c3122
+doccontainersize 299004
+doccontainerchecksum fd15657a8c7e8af4d21721f64ee0c2a77606d965698fdfeb581116f3b13dbf95bf774b77f019bef4cdb4565cd1957cf040818b1d9f78425eecfccc48ab6c5e28
+srccontainersize 5628
+srccontainerchecksum 9ee30440400c6cba5726ad3e15e0044fb18b74613237da64eca9e188246193b6e0ac205af9a3e7e1b566503330a85bf6507db7c3ac4caba6c31033f9f87404e2
+runfiles size=2
+ tex/latex/listingsutf8/listingsutf8.sty
+catalogue-contact-bugs https://github.com/ho-tex/listingsutf8/issues
+catalogue-contact-repository https://github.com/ho-tex/listingsutf8
+catalogue-ctan /macros/latex/contrib/listingsutf8
+catalogue-license lppl1.3
+catalogue-topics listing synt-hlt utf8-adapt
+catalogue-version 1.5
+
+name mdframed
+category Package
+revision 31075
+shortdesc Framed environments that can split at page boundaries
+longdesc The package develops the facilities of framed in providing
+longdesc breakable framed and coloured boxes. The user may instruct the
+longdesc package to perform its operations using default LaTeX commands,
+longdesc PStricks or TikZ.
+containersize 21404
+containerchecksum 0cff0945adc04102e0b0a154cac1f78e9ea903b29e3f880156b888abeb4ca23565d39a7b66d8097c35534baebdf6af152c5b3830d08e1287e8e8d18e8f6344d0
+doccontainersize 1396108
+doccontainerchecksum 06822404872899d6f509fa94f69cdcb81dd69866fbc5a82fd54ca361aaf27133140290cec2d08800dbb39c896ebb7cc19dc4cce38d2a0e45de9c658bbadf3352
+srccontainersize 41792
+srccontainerchecksum 04fa6379f9840676b4fbc31029f091d9112524f8450747ce31687c9ba77a02e41c25ff51676424e97b788c48bf0bbab690459b6b84e128514cda8efd459255d4
+runfiles size=54
+ tex/latex/mdframed/ltxmdf.cls
+ tex/latex/mdframed/md-frame-0.mdf
+ tex/latex/mdframed/md-frame-1.mdf
+ tex/latex/mdframed/md-frame-2.mdf
+ tex/latex/mdframed/md-frame-3.mdf
+ tex/latex/mdframed/mdframed.sty
+catalogue-also framed
+catalogue-contact-repository https://github.com/marcodaniel/mdframed
+catalogue-ctan /macros/latex/contrib/mdframed
+catalogue-license lppl
+catalogue-topics boxing box-breaking decoration
+catalogue-version 1.9b
+
+name needspace
+category Package
+revision 29601
+shortdesc Insert pagebreak if not enough space
+longdesc Provides commands to disable pagebreaking within a given
+longdesc vertical space. If there is not enough space between the
+longdesc command and the bottom of the page, a new page will be started.
+containersize 828
+containerchecksum 663b2ffe30b1d9a588183916ccb0e3fecf3098d3e67f2a40fc49e1db1e5c1a892bfb56eb177bccd923415dfe51d4a225e2017be3b2f3f7185071836cb2e04391
+doccontainersize 158552
+doccontainerchecksum 3af05a6704a8d3c9539cab0871f9f9c8b7a241549c1b3127dfce2a0eaf77b87d54fdafff4b2749eb4614ad9aba45bd2e3d695a92243ea30472e62f7945eff004
+srccontainersize 2120
+srccontainerchecksum a629e9b798ab772feed1e66b773fbc141b0b2c2cb6c336acf61e8e3884246da1b36f90260fd47121e53e552f6569528e81ee788b6d1779c9e87eb54517a2d787
+runfiles size=1
+ tex/latex/needspace/needspace.sty
+catalogue-ctan /macros/latex/contrib/needspace
+catalogue-license lppl
+catalogue-topics layout
+catalogue-version 1.3d
+
+name physics
+category Package
+revision 28590
+shortdesc Macros supporting the Mathematics of Physics
+longdesc The package defines simple and flexible macros for typesetting
+longdesc equations in the languages of vector calculus and linear
+longdesc algebra, using Dirac notation.
+containersize 5912
+containerchecksum e394a7f8eda4583cf196dccbd9d52122d0ee630a411630f11d432018c5e9696a9b3feacfa2f881d82090df165a73ee0fa610ad86422123a9e1502ccf4b695be0
+doccontainersize 232876
+doccontainerchecksum 40a85407502116954024d51361dcbfdf36cac07aae382ada1f96d413f9b838ea5a11d7014722b5641a75b6c9bb8a5c6c134c8c0d424788f47f45fc80b277b3ca
+runfiles size=8
+ tex/latex/physics/physics.sty
+catalogue-ctan /macros/latex/contrib/physics
+catalogue-license lppl
+catalogue-topics physics maths
+catalogue-version 1.3
+
+name quoting
+category Package
+revision 32818
+shortdesc Consolidated environment for displayed text
+longdesc As an alternative to the LaTeX standard environments quotation
+longdesc and quote, the package provides a consolidated environment for
+longdesc displayed text. First-line indentation may be activated by
+longdesc adding a blank line before the quoting environment. A key-value
+longdesc interface (using kvoptions) allows the user to configure font
+longdesc properties and spacing and to control orphans within and after
+longdesc the environment.
+containersize 1832
+containerchecksum 44a9c726a5a9158fcd13fd93785101d2a9a940f34da3d52efd5be1a0467cd76aeaf4706b945a8de0b4e0b4a90740567cfad87f08aaa92e7d4eeae8eb9f7bbc73
+doccontainersize 307136
+doccontainerchecksum b3990965effff7529a7c18cdd3a08af337be3766ffe535feaf54db504a47b0f054af41511a635c3e70c34d3025df419af702d319240ee673f7462d2cf4ccbbc2
+srccontainersize 8292
+srccontainerchecksum a50186cf1b8b0f55ffe4b2e8447b1232c14c6b36aaa4635bba464de1648ed01adbfa13d8a184bdda8398573b2b9132948577e47e252bcb1014761f4318a76ede
+runfiles size=1
+ tex/latex/quoting/quoting.sty
+catalogue-ctan /macros/latex/contrib/quoting
+catalogue-license lppl1.3
+catalogue-topics quotation
+catalogue-version 0.1c
+
+name silence
+category Package
+revision 27028
+shortdesc Selective filtering of error messages and warnings
+longdesc The package allows the user to filter out unwanted warnings and
+longdesc error messages issued by LaTeX, packages and classes, so they
+longdesc won't pop out when there's nothing one can do about them.
+longdesc Filtering goes from the very broad ("avoid all messages by such
+longdesc and such") to the fine-grained ("avoid messages that begin
+longdesc with..."). Messages may be saved to an external file for later
+longdesc reference.
+containersize 3620
+containerchecksum 95f4f095e0f70dcd11482be4f6d52c5ea7a06ad820c08386ad956b9bb9ad593410e59fe9bb5904c3242594d466c495e7793718d4cb707ed3edd1d17ac3c1c1a8
+doccontainersize 466940
+doccontainerchecksum 988df943eaf9337145d081de38ac22389bbffd3e94408b1cbb5de7605cccb47e2fa837813d4647c339d978b5b9b3e82e6d9859b840e89c09c95dd9572db0601b
+srccontainersize 17724
+srccontainerchecksum 7a628ca9efcc34863f064783a1e65e7bfee2a735a2457413d5b938e50b823fdfc6137f56041885e2c4910119ac756a5d6eecff91d9e99eb2bb85d2cd73f273b3
+runfiles size=5
+ tex/latex/silence/silence.sty
+catalogue-ctan /macros/latex/contrib/silence
+catalogue-license lppl
+catalogue-topics compilation
+catalogue-version 1.5b
+
+name siunitx
+category Package
+revision 53914
+shortdesc A comprehensive (SI) units package
+longdesc Typesetting values with units requires care to ensure that the
+longdesc combined mathematical meaning of the value plus unit
+longdesc combination is clear. In particular, the SI units system lays
+longdesc down a consistent set of units with rules on how they are to be
+longdesc used. However, different countries and publishers have
+longdesc differing conventions on the exact appearance of numbers (and
+longdesc units). A number of LaTeX packages have been developed to
+longdesc provide consistent application of the various rules: SIunits,
+longdesc sistyle, unitsdef and units are the leading examples. The
+longdesc numprint package provides a large number of number-related
+longdesc functions, while dcolumn and rccol provide tools for
+longdesc typesetting tabular numbers. The siunitx package takes the best
+longdesc from the existing packages, and adds new features and a
+longdesc consistent interface. A number of new ideas have been
+longdesc incorporated, to fill gaps in the existing provision. The
+longdesc package also provides backward-compatibility with SIunits,
+longdesc sistyle, unitsdef and units. The aim is to have one package to
+longdesc handle all of the possible unit-related needs of LaTeX users.
+longdesc The package relies on LaTeX 3 support from the l3kernel and
+longdesc l3packages bundles.
+depend l3kernel
+depend l3packages
+containersize 34760
+containerchecksum 371fabf3b76239174c7f2f0cb6bf123b7fbb224261e07460d1620459578fd12a400f8e4babd43637afa9b917a39050c11973f4db8dd5ef17a6cdcd172eca245b
+doccontainersize 629508
+doccontainerchecksum e0b8c3dbafa6cebf1aa344c6d99bb17a532201c198bbb6e9f73319e6653bb8ede2243ba0bdaa57074d8c374b31d45659f3e803680eafde37797085a8edada8f9
+srccontainersize 103376
+srccontainerchecksum ac85900c379cc0c2b052685c02d0a684e24016333b4ae8072ee390e213aaa3204b35faa74052cb8d6716064daddcb940afaf4905cf3145c02e2436fce7af88e1
+runfiles size=78
+ tex/latex/siunitx/siunitx-abbreviations.cfg
+ tex/latex/siunitx/siunitx-binary.cfg
+ tex/latex/siunitx/siunitx-version-1.cfg
+ tex/latex/siunitx/siunitx.sty
+catalogue-contact-bugs https://github.com/josephwright/siunitx/issues
+catalogue-contact-home https://www.texdev.net
+catalogue-contact-repository https://github.com/josephwright/siunitx
+catalogue-ctan /macros/latex/contrib/siunitx
+catalogue-license lppl1.3c
+catalogue-topics units scientific-docs expl3
+catalogue-version 2.8b
+
+name stackengine
+category Package
+revision 53843
+shortdesc Highly customised stacking of objects, insets, baseline changes, etc
+longdesc The package provides a versatile way to stack objects
+longdesc vertically in a variety of customizable ways. A number of
+longdesc useful macros are provided, all of which make use of the
+longdesc stackengine core.
+depend listofitems
+containersize 5064
+containerchecksum 13ce66f2a3335c62db5bb2872596480572e106e1cd594d8b787684f1fd3ea4b57ee015737e7e5dd053b526bf52b6ad20a84f4d4db49d9b888f55ad5b637894c4
+doccontainersize 339824
+doccontainerchecksum 8a32a4a5e75023ab1750a6e85cb23b919f44ee838d24c0883fd4b8945d57a9e3a91b456503642544676eb4100de68a0ba4547d8e2c45a0ae90b3ab7b36acaf6d
+runfiles size=4
+ tex/latex/stackengine/stackengine.sty
+catalogue-ctan /macros/latex/contrib/stackengine
+catalogue-license lppl1.3
+catalogue-topics macro-supp
+catalogue-version 4.01
+
+name subfiles
+category Package
+revision 56977
+shortdesc Individual typesetting of subfiles of a "main" document
+longdesc Using this package the user can handle multi-file projects more
+longdesc comfortably, making it possible to both process the subsidiary
+longdesc files by themselves and to process the main file that includes
+longdesc them, without making any changes to either.
+depend import
+containersize 2284
+containerchecksum 8f842b0debcae3110f0a4b2f59047cd55c2726d128bf3e159f2745a4b8a645c3f8471fe218ca34c32f2b35d42d1c5023a25f09fc3bf0c1a4f0c33197776b1cec
+doccontainersize 236484
+doccontainerchecksum f54f52c5cee01b7ae8e01bff5a4d828b5c6708c31f2cf40d7e83c8a91c4c597945695dd7062b6088d3f91f7a9858e3227c850d658ae7a7bf94392e00e3eaf9c7
+srccontainersize 9080
+srccontainerchecksum 2623a0ec244722c1e3194d9ff1237305c1b7bf8c3baf6f60edd69b165bbd5ea83fb73ad23bf9aac1937b4ecf1059754e798eb2c97f7bab5d550fabbe84b752c0
+runfiles size=3
+ tex/latex/subfiles/subfiles.cls
+ tex/latex/subfiles/subfiles.sty
+catalogue-also combine standalone
+catalogue-contact-bugs https://github.com/gsalzer/subfiles/issues
+catalogue-contact-repository https://github.com/gsalzer/subfiles
+catalogue-contact-support https://tex.stackexchange.com/
+catalogue-ctan /macros/latex/contrib/subfiles
+catalogue-license lppl1.3
+catalogue-topics subdocs class
+catalogue-version 2.2
+
+name tcolorbox
+category Package
+revision 56610
+shortdesc Coloured boxes, for LaTeX examples and theorems, etc
+longdesc This package provides an environment for coloured and framed
+longdesc text boxes with a heading line. Optionally, such a box may be
+longdesc split in an upper and a lower part; thus the package may be
+longdesc used for the setting of LaTeX examples where one part of the
+longdesc box displays the source code and the other part shows the
+longdesc output. Another common use case is the setting of theorems. The
+longdesc package supports saving and reuse of source code and text
+longdesc parts. The package depends on the pgf, verbatim, environ, and
+longdesc etoolbox packages.
+containersize 230544
+containerchecksum 70647656ee420fcb3c832e8552c2340229b0586a638f7c55404f96f20dcb3e8fd2c561a44ece09e6f507a3c4e2be189aa4cb3a3c4d8bc338ca4396e5d4b9416d
+doccontainersize 4716812
+doccontainerchecksum 5ec6c748b48b0166555437e0f75203e616e43a8b15787890b00d36df7c86de1971d2a876c5e7228f60f9ccd2e14c7b30ec061f35127a76f6194722c7103c9c0f
+runfiles size=143
+ tex/latex/tcolorbox/blueshade.png
+ tex/latex/tcolorbox/crinklepaper.png
+ tex/latex/tcolorbox/goldshade.png
+ tex/latex/tcolorbox/pink_marble.png
+ tex/latex/tcolorbox/tcbbreakable.code.tex
+ tex/latex/tcolorbox/tcbdocumentation.code.tex
+ tex/latex/tcolorbox/tcbexternal.code.tex
+ tex/latex/tcolorbox/tcbfitting.code.tex
+ tex/latex/tcolorbox/tcbhooks.code.tex
+ tex/latex/tcolorbox/tcblistings.code.tex
+ tex/latex/tcolorbox/tcblistingscore.code.tex
+ tex/latex/tcolorbox/tcblistingsutf8.code.tex
+ tex/latex/tcolorbox/tcbmagazine.code.tex
+ tex/latex/tcolorbox/tcbminted.code.tex
+ tex/latex/tcolorbox/tcbposter.code.tex
+ tex/latex/tcolorbox/tcbprocessing.code.tex
+ tex/latex/tcolorbox/tcbraster.code.tex
+ tex/latex/tcolorbox/tcbskins.code.tex
+ tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+ tex/latex/tcolorbox/tcbtheorems.code.tex
+ tex/latex/tcolorbox/tcbvignette.code.tex
+ tex/latex/tcolorbox/tcbxparse.code.tex
+ tex/latex/tcolorbox/tcolorbox.sty
+catalogue-contact-bugs https://github.com/T-F-S/tcolorbox/issues
+catalogue-ctan /macros/latex/contrib/tcolorbox
+catalogue-license lppl1.3
+catalogue-topics boxing colour verbatim listing macro-demo
+catalogue-version 4.42
+
+name titlesec
+category Package
+revision 52413
+shortdesc Select alternative section titles
+longdesc A package providing an interface to sectioning commands for
+longdesc selection from various title styles. E.g., marginal titles and
+longdesc to change the font of all headings with a single command, also
+longdesc providing simple one-step page styles. Also includes a package
+longdesc to change the page styles when there are floats in a page. You
+longdesc may assign headers/footers to individual floats, too.
+containersize 19980
+containerchecksum bd1538a4596c55a6e0a542df5587f4466795a59ac55472340bcfc400670b79a04f0b141ad5705c826789ce0094fa4b106b5917f4232167a66047d8e6edd4998c
+doccontainersize 657856
+doccontainerchecksum 34623133da534fa15d491f3ecfeb6ee6736a580c12577d7ef313efb341c97ffe1cfac49f4c94b90f8f519847bb7b0d37b003ee485c240d1dfab3b68426563dcc
+runfiles size=24
+ tex/latex/titlesec/titleps.sty
+ tex/latex/titlesec/titlesec.sty
+ tex/latex/titlesec/titletoc.sty
+catalogue-also fancyhdr titleps sectsty titletoc tocloft
+catalogue-contact-bugs https://github.com/jbezos/titlesec/issues
+catalogue-contact-repository https://github.com/jbezos/titlesec
+catalogue-ctan /macros/latex/contrib/titlesec
+catalogue-license mit
+catalogue-topics headings page-hf
+catalogue-version 2.13
+
+name transparent
+category Package
+revision 52981
+shortdesc Using a color stack for transparency with pdfTeX
+longdesc Since version 1.40 pdfTeX supports several color stacks; the
+longdesc package uses a separate colour stack for control of
+longdesc transparency (which is not, of course, a colour).
+containersize 1992
+containerchecksum a1b545dee3fc210d9ff39c9ad1e8015c3972b2f1655e40f828d3bca0d8ae759772e18fd180cec5fa88d45f48076d92d07bebf2e03ef26745ad53a2fd8581d9cf
+doccontainersize 266624
+doccontainerchecksum 7de04001cea582db36ed0fb0b5f8382a367603d8ce8327d29d773d05af116ae76adddd678b220d2df8abf7c6c619bee9f050f51c5aa255d7b0fb9b576638e049
+srccontainersize 5448
+srccontainerchecksum 73a5f575a644334ee5a61f740c4f5f2e09a10ee0c4c5732be70809f66f67fddc5979bafe4a7fcd8a2462e0dec2b98867e9ba1ff2d82e3be9743ecf5773cd5ab8
+runfiles size=2
+ tex/latex/transparent/transparent.sty
+catalogue-contact-bugs https://github.com/ho-tex/transparent/issues
+catalogue-contact-repository https://github.com/ho-tex/transparent
+catalogue-ctan /macros/latex/contrib/transparent
+catalogue-license lppl1.3
+catalogue-topics typesetting
+catalogue-version 1.4
+
+name trimspaces
+category Package
+revision 15878
+shortdesc Trim spaces around an argument or within a macro
+longdesc A very short package that allows you to expandably remove
+longdesc spaces around a token list (commands are provided to remove
+longdesc spaces before, spaces after, or both); or to remove surrounding
+longdesc spaces within a macro definition, or to define space-stripped
+longdesc macros.
+containersize 936
+containerchecksum 09bfe50d1b14502311aea7a20df80e70c1907b1c8443aba9453aa0a3eb76cbd34728734b81df63bd5895a4a5a55ddfe6d0feedf7d5d28d6b5922a374bc550c9e
+doccontainersize 148416
+doccontainerchecksum 8e26064de0c14d6caa1d6cf625cbd2d598102056136dfa20d0a7ffb178c26829db0206d87893937b63f83171744a29bea3567e16e2a7a0d454734a0b72837277
+srccontainersize 2488
+srccontainerchecksum a34429fb9b8514d25ac523f0e3bfdc880b84951ff228ede3016e2d29c001b7f8058755870fc3c63e6041ef4768290177dabc6d520157082fb077497017065b65
+runfiles size=1
+ tex/latex/trimspaces/trimspaces.sty
+catalogue-ctan /macros/latex/contrib/trimspaces
+catalogue-license lppl
+catalogue-topics macro-supp
+catalogue-version 1.1
+
+name was
+category Package
+revision 21439
+shortdesc A collection of small packages by Walter Schmidt
+longdesc A bundle of packages that arise in the author's area of
+longdesc interest: compliance of maths typesetting with ISO standards;
+longdesc symbols that work in both maths and text modes commas for both
+longdesc decimal separator and maths; and upright Greek letters in
+longdesc maths.
+containersize 3092
+containerchecksum e3dec504da2dd28534872b4363695d797a874a0af5c2a77e6559a2765f6150cc50614b8905c90faa6fb9fd54d9634a9ddff148564904b1454f21d3fbd21918dd
+doccontainersize 578872
+doccontainerchecksum 24cc3a8931fe48134810ffe626789139a821585f0d359a177c56ae5a442482fb9d36f344061128ac185469b97c4c3f440ad02ebc7135366253cd9bbcf99895bc
+srccontainersize 9388
+srccontainerchecksum 507ed77f8a5a119c16fcb9478a559f516a2e612893941f8854e4945968ef5b44ccab641f1737c745b33209828a4541e3615dd46f304b5e2f5b29c5282eeeccef
+runfiles size=6
+ tex/latex/was/fixmath.sty
+ tex/latex/was/gensymb.sty
+ tex/latex/was/icomma.sty
+ tex/latex/was/upgreek.sty
+catalogue-ctan /macros/latex/contrib/was
+catalogue-license collection
+catalogue-topics collection
+
+name wrapfig
+category Package
+revision 22048
+shortdesc Produces figures which text can flow around
+longdesc Allows figures or tables to have text wrapped around them. Does
+longdesc not work in combination with list environments, but can be used
+longdesc in a parbox or minipage, and in twocolumn format. Supports the
+longdesc float package.
+containersize 9360
+containerchecksum ea9d0693a43f985b9ab13a51e0af82b866adc8500dfb9f42e8b20ce8facd07d0534749bda61d13bc86b921300336c9f7e6099f252c4c65370a2e2cb4423589ae
+doccontainersize 337900
+doccontainerchecksum 9ba4292d2641a31f3719ca66e3d80ca70638f9c943bfad9e9e08543f57a53eccc1292930e95d6a3677d0696e0deb1d1ca698b83eb7285baae275b70ac808be33
+runfiles size=7
+ tex/latex/wrapfig/wrapfig.sty
+catalogue-also floatflt
+catalogue-ctan /macros/latex/contrib/wrapfig
+catalogue-license lppl
+catalogue-topics text-flow
+catalogue-version 3.6
+
+name zref
+category Package
+revision 56611
+shortdesc A new reference scheme for LaTeX
+longdesc This package offers a means to remove the limitation, of only
+longdesc two properties, that is inherent in the way LaTeX's reference
+longdesc system works. The package implements an extensible referencing
+longdesc system, where properties may be defined and used in the course
+longdesc of a document. It provides an interface for macro programmers
+longdesc to access the new reference scheme and some modules that use
+longdesc it. Modules available are: zref-user, use zref for
+longdesc "traditional" labels and references; zref-abspage, retrieve
+longdesc absolute page numbers (physical pages, as opposed to the
+longdesc 'logical' page number that is normally typeset when a page
+longdesc number is requested; zref-lastpage, provide a zref-label for
+longdesc the last page of the document; zref-nextpage, provide the page
+longdesc number of the next page of the document; zref-totpages, provide
+longdesc the total number of pages in the document; zref-pagelayout,
+longdesc provide the page layout parameters of a each page (which may
+longdesc then be printed at the end of the document); zref-perpage, make
+longdesc a counter reset for each new page; zref-titleref, make section
+longdesc title or caption text available through the reference system;
+longdesc zref-savepos, make positions on a page available; zref-dotfill,
+longdesc controlled dot-filling; zref-env, record the latest
+longdesc environment's name and the line it started on; and zref-xr,
+longdesc provide the facilities of the xr and xr-hyper packages.
+containersize 14364
+containerchecksum f64604e9308278b34347bcbcaed39b500371c575082311c1fb28bf6bd7db26fc2d2e3d3e8843e3a195fd22050450bffb18c3e8b64a54f0787c1122ac3901ad2f
+doccontainersize 651440
+doccontainerchecksum 928c54696572694b1fc7712a0f8357851c18d83bf723c6f03a9f784dfbd123b2c886593bc95de0d3b7f8109e1d0b3a52cc6ef1a877c0506130e7c5d96b046a67
+srccontainersize 36852
+srccontainerchecksum 82e6c4210453e9f7adfd93673aa2e7dfbf2c39e938b9ad0d2309ea59b53259d1d1d9b05924f2f6f9f64ba29ecdbda8e074527923fdfd1551a42b1057450b2fc5
+runfiles size=37
+ tex/latex/zref/zref-abspage.sty
+ tex/latex/zref/zref-abspos.sty
+ tex/latex/zref/zref-base.sty
+ tex/latex/zref/zref-counter.sty
+ tex/latex/zref/zref-dotfill.sty
+ tex/latex/zref/zref-env.sty
+ tex/latex/zref/zref-hyperref.sty
+ tex/latex/zref/zref-lastpage.sty
+ tex/latex/zref/zref-marks.sty
+ tex/latex/zref/zref-nextpage.sty
+ tex/latex/zref/zref-pageattr.sty
+ tex/latex/zref/zref-pagelayout.sty
+ tex/latex/zref/zref-perpage.sty
+ tex/latex/zref/zref-runs.sty
+ tex/latex/zref/zref-savepos.sty
+ tex/latex/zref/zref-thepage.sty
+ tex/latex/zref/zref-titleref.sty
+ tex/latex/zref/zref-totpages.sty
+ tex/latex/zref/zref-user.sty
+ tex/latex/zref/zref-xr.sty
+ tex/latex/zref/zref.sty
+catalogue-contact-bugs https://github.com/ho-tex/zref/issues
+catalogue-contact-repository https://github.com/ho-tex/zref
+catalogue-ctan /macros/latex/contrib/zref
+catalogue-license lppl1.3c
+catalogue-topics label-ref
+catalogue-version 2.32
+

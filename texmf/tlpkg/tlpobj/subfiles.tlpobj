@@ -1,0 +1,26 @@
+name subfiles
+category Package
+revision 56977
+shortdesc Individual typesetting of subfiles of a "main" document
+longdesc Using this package the user can handle multi-file projects more
+longdesc comfortably, making it possible to both process the subsidiary
+longdesc files by themselves and to process the main file that includes
+longdesc them, without making any changes to either.
+depend import
+containersize 2284
+containerchecksum 8f842b0debcae3110f0a4b2f59047cd55c2726d128bf3e159f2745a4b8a645c3f8471fe218ca34c32f2b35d42d1c5023a25f09fc3bf0c1a4f0c33197776b1cec
+doccontainersize 236484
+doccontainerchecksum f54f52c5cee01b7ae8e01bff5a4d828b5c6708c31f2cf40d7e83c8a91c4c597945695dd7062b6088d3f91f7a9858e3227c850d658ae7a7bf94392e00e3eaf9c7
+srccontainersize 9080
+srccontainerchecksum 2623a0ec244722c1e3194d9ff1237305c1b7bf8c3baf6f60edd69b165bbd5ea83fb73ad23bf9aac1937b4ecf1059754e798eb2c97f7bab5d550fabbe84b752c0
+runfiles size=3
+ tex/latex/subfiles/subfiles.cls
+ tex/latex/subfiles/subfiles.sty
+catalogue-also combine standalone
+catalogue-contact-bugs https://github.com/gsalzer/subfiles/issues
+catalogue-contact-repository https://github.com/gsalzer/subfiles
+catalogue-contact-support https://tex.stackexchange.com/
+catalogue-ctan /macros/latex/contrib/subfiles
+catalogue-license lppl1.3
+catalogue-topics subdocs class
+catalogue-version 2.2

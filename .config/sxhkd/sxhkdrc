@@ -1,0 +1,165 @@
+######################
+### APPS and DMENU ###
+######################
+
+# Terminal emulator
+super + Return
+	st
+
+# Quick terminal
+super + x
+	bspc rule -a St -o state=floating rectangle=600x450 && st
+
+# Browser
+super + b
+	qutebrowser --target window https://google.com
+
+# Autodraw
+super + d
+	bspc rule -a qutebrowser -o state=floating && qutebrowser --target window https://www.autodraw.com/
+
+# Vifm file manager
+super + v
+	st -e vifm
+
+# Thunar file manager
+super + shift v
+	thunar
+
+# Pomodoro forest
+super + shift p
+	bspc rule -a St -o state=floating rectangle=600x450 && st -e nvim /home/bersp/.config/bashscripts/polybar/pomodoro/forest.csv
+
+# Launch dmenu
+super + @space
+	dmenu_run
+
+# Config files
+super + c
+	bash $HOME/.config/bashscripts/dmenu_config_files.sh
+
+# Change icons in polybar
+super + i
+	bash $HOME/.config/bashscripts/change_icon_polybar/rdesktops.sh
+
+################
+### COMMANDS ###
+############R###
+
+# Screenshots
+Print
+	bash $HOME/.config/bashscripts/fullscreen_screenshot.sh
+
+super + Print
+	bash $HOME/.config/bashscripts/hacksaw_screenshot.sh
+
+# Make sxhkd reload its configuration files
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#####################
+### BSPWM HOTKEYS ###
+#####################
+
+# quit/restart bspwm
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+alt + {w,q}
+	bspc node -{c,k}
+
+# Alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+#############
+### Sound ###
+#############
+
+# Toggle mute
+XF86AudioMute
+	amixer set Master toggle
+
+# Raise volume
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+# Lower volume
+XF86AudioLowerVolume
+	amixer set Master 5%-
+
+###################
+### ORIENTATION ###
+###################
+
+# rotate current node 90 degrees
+super + r
+	bspc node @focused:/ -R 90
+
+super + {x,y}
+	bspc node @/ --flip {horizontal,vertical}
+
+###################
+### STATE/FLAGS ###
+###################
+
+# set the window state
+super + {t,alt + t, f, shift + f}
+	bspc node -t {tiled,pseudo_tiled,floating, fullscreen}
+
+# Sticky window
+super + s
+	bspc node -g sticky
+
+##################
+### FOCUS/SWAP ###
+##################
+
+# focus the node in the given direction
+super + {_,alt + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus desktop with wheel
+super + button{4,5}
+    bspc desktop -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+super + alt + bracket{left,right}
+	bspc node -d {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,alt + }{1-9,0}
+	bspc {desktop -f,node -d} focused:'^{1-9,10}'
+
+#################
+### PRESELECT ###
+#################
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+
+###################
+### MOVE/RESIZE ###
+###################
+
+# expand a window by moving one of its side outward
+super + shift + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + shift + alt + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}

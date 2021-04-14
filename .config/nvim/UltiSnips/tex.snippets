@@ -1,0 +1,237 @@
+snippet preamble "Init document latex with bibliography preamble"
+\documentclass{article}
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+\usepackage[light]{$HOME/Dropbox/Latex/preambles/preamble_bibliography}
+
+\begin{document}
+$0
+\end{document}
+endsnippet
+
+# Bold text
+snippet bf "Bold text"
+\textbf{$1}$0
+endsnippet
+
+# Italic text
+snippet it "Italic text"
+\textit{$1}$0
+endsnippet
+
+# Begin {} / end {}
+snippet beg "begin{} / end{}"
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+# Wrap figure
+snippet wrap "Wrap Figure"
+\begin{wrapfigure}{r}{$1\textwidth}
+	\vspace{-0.4cm}
+	\includegraphics[width=$1\textwidth]{$0}
+\end{wrapfigure}
+endsnippet
+
+# Subscript
+snippet '([A-Za-z])_(\w\w)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+# Superscript
+snippet ^a "superscript" iA
+^{$1}$0
+endsnippet
+
+# Fractions
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+priority 1000
+snippet '^.*\)/' "() Fraction" wrA
+`!p
+stripped = match.string[:-1]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+# Time derivative dot
+snippet dot "Time derivative"
+\dot{$1}$0
+endsnippet
+
+# Poisson brakets
+snippet pb "Poisson braket"
+\\{$1\\}$0
+endsnippet
+
+# Create vector
+priority 10
+snippet "vb" "vb" riA
+\vb{$1}$0
+endsnippet
+
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix auto" riA
+\vb{`!p snip.rv=match.group(1)`}
+endsnippet
+
+# Create tensor
+priority 10
+snippet "tensb" "Tensor bold" riA
+\tensb{$1}$0
+endsnippet
+
+# Create versor
+priority 10
+snippet vu "Versor" i
+\vu{$1}$0
+endsnippet
+
+# Create operator
+snippet "(\\?\w+)(op)" "Operator postfix" ri
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+# Math enviroments
+snippet env "Normal math"
+\[
+$1
+\]
+$0
+endsnippet
+
+snippet enva "Aligned math"
+\[
+\begin{aligned}
+$1
+\end{aligned}
+\]
+$0
+endsnippet
+
+# Integral
+snippet int "Integral"
+\int_{$1}^{$2} \dd $3 ~ $0
+endsnippet
+
+snippet "intinf" "Integral -infty to infty" riA
+\int_{-\infty}^\infty \dd $1 ~ $0
+endsnippet
+
+snippet "int0" "Integral 0 to infty" riA
+\int_0^\infty $0
+endsnippet
+
+snippet oiint "Close surface integral"
+\oiint_{$1} $0
+endsnippet
+
+# Sumattory
+snippet sum "Sumattory"
+\sum_{$1}^{$2} $0
+endsnippet
+
+snippet "sumi" "Sum i=1 to N" riA
+\sum_{i=1}^{N} $0
+endsnippet
+
+snippet "sumj" "Sum i\neq j to N" riA
+\sum_{i\neq j}^{N} $0
+endsnippet
+
+# Internal product
+snippet "vdot" "Internal product" riA
+\vdot $0
+endsnippet
+
+# Commutator
+snippet "comm" "Internal product" ri
+\comm{$1}{$2} $0
+endsnippet
+
+# Dagged
+snippet "dag" "Operator postfix" ri
+^\dag $0
+endsnippet
+
+# Implies
+snippet "-->" "Implies" riA
+\implies $0
+endsnippet
+
+# Diferential in integral
+snippet dd "Differential in integral" i
+\, \dd $0
+endsnippet
+
+# Derivate
+priority 1000
+snippet dv "Derivate" i
+\dv{$1}{$2}$0
+endsnippet
+
+# Parcial derivate
+priority 2000
+snippet pdv "Parcial derivate" i
+\pdv{$1}{$2}$0
+endsnippet
+
+# Framed
+snippet framed "Framed env"
+\begin{framed}{$1}
+$0
+\end{framed}
+endsnippet
+
+# Cancel
+snippet cancel "Cancel" i
+\cancel{$1} $0
+endsnippet
+
+# Underbrace
+snippet und "Underbrace" i
+\underbrace{$1}_{$2}$0
+endsnippet
+
+# Braket
+snippet "\<(.*?)\|" "bra" riA
+\bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "\|(.*?)\>" "ket" riA
+\ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "(.*)\\bra{(.*?)}([^\|]*?)\>" "braket" riA
+`!p snip.rv = match.group(1)`\braket{`!p snip.rv = match.group(2)`}{`!p snip.rv = match.group(3).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+# Eval
+snippet eval "Parcial derivate" i
+\eval{$1}$0
+endsnippet
+
+snippet initnote "Parcial derivate"
+---
+title: $1
+init_date: 06-11-2020
+last_mod_date: 06-11-2020
+tags: $2
+---
+
+# $1
+$0
+endsnippet

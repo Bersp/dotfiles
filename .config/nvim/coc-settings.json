@@ -1,0 +1,7 @@
+{
+"suggest.autoTrigger": "none",
+"python.linting.enabled": false,
+"suggest.noselect": false,
+"diagnostic.enable": false,
+"signature.enable": false
+}

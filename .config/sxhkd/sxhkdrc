@@ -28,7 +28,7 @@ super + shift v
 
 # Pomodoro forest
 super + shift p
-	bspc rule -a St -o state=floating rectangle=600x450 && st -e nvim /home/bersp/.config/bashscripts/polybar/pomodoro/forest.csv
+	bspc rule -a St -o state=floating rectangle=600x450 && st -e nvim /home/bersp/Dropbox/Pomodoro/forest.csv
 
 # Launch dmenu
 super + @space

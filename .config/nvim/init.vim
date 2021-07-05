@@ -42,12 +42,12 @@ call plug#begin('~/.config/nvim/plugged')
 " Lua Plugins
 	Plug 'hkupty/iron.nvim' " IPython interaction
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " Treesitter
+	Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope and barbar
 
 	" Telescope
 	Plug 'nvim-lua/popup.nvim' " for Telescope
 	Plug 'nvim-lua/plenary.nvim' " for Telescope
 	Plug 'nvim-telescope/telescope-fzy-native.nvim' " for Telescope
-	Plug 'kyazdani42/nvim-web-devicons' " for Telescope
 	Plug 'nvim-telescope/telescope.nvim' " Telescope
 
 " Syntax and file dependent plugins
@@ -151,6 +151,9 @@ call plug#end()
 " Smartcase
 	set ignorecase
 	set smartcase
+
+" Breaklines with tabs
+	set breakindent
 
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
@@ -335,8 +338,8 @@ call plug#end()
 	nmap <C-w>0 <C-w>=
 
 " Compile {{{
-	autocmd FileType python nmap <buffer> <Leader><CR> :update<bar>!python3 % \| less<CR>
 	autocmd FileType lua nmap <buffer> <Leader><CR> :update<bar>!lua % \| less<CR>
+	" autocmd FileType lua nmap <buffer> <Leader><CR> :update<bar>!../love %:p:h <CR>
 	autocmd FileType tex nmap <buffer> <Leader><CR> :update<bar>:VimtexCompile<CR>
     autocmd FileType c nmap <buffer> <Leader><CR> :update<bar>!clang -o %<.out % && ./%<.out<CR>
 	autocmd FileType cpp nmap <buffer> <Leader><CR> :update<bar>!make %< && ./%<<CR>
@@ -347,9 +350,9 @@ call plug#end()
 	" }}}
 
 " Second Compile {{{
-	autocmd FileType python nmap <buffer> <Leader><Leader><CR> :update<bar>vs<Space>\|<Space>terminal ipython -i -c "\%run %"<CR>
 	autocmd FileType markdown nnoremap <buffer> <Leader><Leader><CR> :update<bar>!zathura "%<.pdf" & disown<CR><CR>
 	autocmd FileType tex nmap <buffer> <Leader><Leader><CR> :update<bar>:VimtexView<CR>
+	" autocmd FileType arduino nmap <buffer> <Leader><Leader><CR> :update<bar>:sp \| resize 10 \| term python ~/.config/bashscripts/serial-monitor-arduino/monitor.py /dev/ttyACM0<CR><CR>Ga
 
 " Foundry markdown alternativy
 	" autocmd FileType markdown nmap <buffer> <Leader><CR> :update<bar>!python3 /Users/bersp/Dropbox/Config_files_and_scripting/fvtt_pdf_compile/foundry_pdf_compile.py "%:p"<CR>

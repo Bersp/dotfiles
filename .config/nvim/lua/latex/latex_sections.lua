@@ -31,6 +31,10 @@ end
 function _G.latex_new_section()
 	-- Get name of the setion from de selection
 	local section_name = vim.fn.input('Section name: ')
+	if section_name == '' then
+		do return end
+	end
+
 
 	-- Path to the file asociated to the selected section
 	local filename_path = get_filename_path(section_name)
@@ -64,7 +68,12 @@ actions.rename_file = function(prompt_bufnr)
 	actions.close(prompt_bufnr)
 
 	print('Change name of section associated to ' .. old_filename_path)
+
 	local new_section_name = vim.fn.input('New section name: ')
+	if new_section_name == '' then
+		do return end
+	end
+
 	local new_filename_path = get_filename_path(new_section_name)
 
   if not file_exists(new_filename_path) then

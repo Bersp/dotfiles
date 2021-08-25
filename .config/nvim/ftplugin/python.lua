@@ -1,4 +1,4 @@
-lua << EOF
+-- Functions
 function _G.python_compiler()
 	vim.cmd("nmap <buffer> <Leader><CR> :update<bar>!python3 % \\| less<CR>")
 	vim.cmd('nmap <buffer> <Leader><Leader><CR> :update<bar>vs<Space>\\|<Space>terminal ipython -i -c "\\%run %"<CR>')
@@ -10,8 +10,13 @@ function _G.manim_compiler()
 	if quality == '' then quality = 'm' end
 	vim.cmd("nmap <buffer> <Leader><CR> :update<bar>!manim -q".. quality .." -p % " .. scene .. "<CR>")
 end
+vim.cmd("command! SetManimCompiler execute 'call v:lua.manim_compiler()'")
+vim.cmd("command! SetPythonCompiler execute 'call v:lua.python_compiler()'")
 
+-- File options
+vim.cmd("call matchadd('ErrorMsg', '\\%81v', 100)")
+vim.bo.expandtab = true
+
+-- Mappings
 _G.python_compiler()
-EOF
-command SetManimCompiler execute "call v:lua.manim_compiler()"
-command SetPythonCompiler execute "call v:lua.python_compiler()"
+

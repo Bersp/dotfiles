@@ -2,7 +2,7 @@ snippet preamble "Init document latex with bibliography preamble"
 \documentclass{article}
 \usepackage{silence}
 \WarningFilter{latex}{You have requested package}
-\usepackage[light]{$HOME/Dropbox/Latex/preambles/preamble_bibliography}
+\usepackage{$HOME/Dropbox/Latex/preambles/preamble_bibliography}
 
 \begin{document}
 $0
@@ -19,11 +19,24 @@ snippet it "Italic text"
 \textit{$1}$0
 endsnippet
 
+# Infinity
+snippet inf "Infinity"
+\infty
+endsnippet
+
 # Begin {} / end {}
 snippet beg "begin{} / end{}"
 \begin{$1}
 	$0
 \end{$1}
+endsnippet
+
+# Normal figure
+snippet fig "Figure"
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=$1\textwidth]{$0}
+\end{figure}
 endsnippet
 
 # Wrap figure
@@ -73,11 +86,6 @@ snippet dot "Time derivative"
 \dot{$1}$0
 endsnippet
 
-# Poisson brakets
-snippet pb "Poisson braket"
-\\{$1\\}$0
-endsnippet
-
 # Create vector
 priority 10
 snippet "vb" "vb" riA
@@ -108,34 +116,32 @@ endsnippet
 # Math enviroments
 snippet env "Normal math"
 \[
-$1
+	$0
 \]
-$0
 endsnippet
 
 snippet enva "Aligned math"
 \[
 \begin{aligned}
-$1
+$0
 \end{aligned}
 \]
-$0
 endsnippet
 
 # Integral
 snippet int "Integral"
-\int_{$1}^{$2} \dd $3 ~ $0
+\int_{$1}^{$2} $0
 endsnippet
 
 snippet "intinf" "Integral -infty to infty" riA
-\int_{-\infty}^\infty \dd $1 ~ $0
+\int_{-\infty}^\infty $0
 endsnippet
 
 snippet "int0" "Integral 0 to infty" riA
 \int_0^\infty $0
 endsnippet
 
-snippet oiint "Close surface integral"
+snippet oint "Close surface integral"
 \oiint_{$1} $0
 endsnippet
 
@@ -146,10 +152,6 @@ endsnippet
 
 snippet "sumi" "Sum i=1 to N" riA
 \sum_{i=1}^{N} $0
-endsnippet
-
-snippet "sumj" "Sum i\neq j to N" riA
-\sum_{i\neq j}^{N} $0
 endsnippet
 
 # Internal product
@@ -189,13 +191,6 @@ snippet pdv "Parcial derivate" i
 \pdv{$1}{$2}$0
 endsnippet
 
-# Framed
-snippet framed "Framed env"
-\begin{framed}{$1}
-$0
-\end{framed}
-endsnippet
-
 # Cancel
 snippet cancel "Cancel" i
 \cancel{$1} $0
@@ -222,16 +217,4 @@ endsnippet
 # Eval
 snippet eval "Parcial derivate" i
 \eval{$1}$0
-endsnippet
-
-snippet initnote "Parcial derivate"
----
-title: $1
-init_date: 06-11-2020
-last_mod_date: 06-11-2020
-tags: $2
----
-
-# $1
-$0
 endsnippet

@@ -1,4 +1,4 @@
-lua << EOF
+if vim.g.loaded_telescope then
 local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
@@ -9,7 +9,7 @@ require('telescope').setup{
 		["<esc>"] = actions.close,
       },
     },
-	file_ignore_patterns = {"%.aux", "%.gz", "%.log", "%.fls", "%.fdb_latexmk", "%.pdf"},
+	file_ignore_patterns = {"%.aux", "%.gz", "%.log", "%.fls", "%.fdb_latexmk", "%.pdf", "%.hdf5", "%.npy", "%.png", "%.jpg", "%.gif", "%.tif", "%.tiff", "%.eot", "%.doctree", "%.woff"},
   },
   extensions = {
   	fzy_native = {
@@ -18,7 +18,5 @@ require('telescope').setup{
 	}
   }
 }
-
-require('telescope').load_extension('fzy_native')
-EOF
-
+--require('telescope').load_extension('fzy_native')
+end

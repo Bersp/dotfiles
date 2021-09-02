@@ -20,6 +20,10 @@ snippet ifsp "import scipy" b
 from scipy.$1 import$0
 endsnippet
 
+snippet af "Apply function" i
+$1(${VISUAL})$0
+endsnippet
+
 # -----------------------------------------------------------------------------
 
 ################
@@ -464,11 +468,11 @@ def ${1:fname}(`!p snip.rv = "self, " if snip.indent else ""`$2):
 endsnippet
 
 snippet def "function with docstrings" b
-def ${1:function}(`!p
+def $1(`!p
 if snip.indent:
-	snip.rv = 'self' + (", " if len(t[2]) else "")`${2:arg1}):
-	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
-write_function_docstring(t, snip) `
+	snip.rv = 'self' + (", " if len(t[2]) else "")`$2):
+	`!p snip.rv = triple_quotes(snip)`
+	${4:TODO: Docstring for $1.}`!p write_function_docstring(t, snip) `
 	${5:${VISUAL:pass}}
 endsnippet
 
@@ -481,40 +485,6 @@ endsnippet
 snippet from "from module import name" b
 from ${1:module} import ${2:Stuff}
 endsnippet
-
-
-##############
-# PROPERTIES #
-##############
-# snippet roprop "Read Only Property" b
-# @property
-# def ${1:name}(self):
-	# ${2:return self._$1}$0
-# endsnippet
-
-snippet rwprop "Read write property" b
-def ${1:name}():
-	`!p snip.rv = triple_quotes(snip) if t[2] else ''
-`${2:TODO: Docstring for $1.}`!p
-if t[2]:
-	snip >> 1
-	style = get_style(snip)
-	snip.rv += '\n' + snip.mkline('', indent='')
-	snip += format_return(style)
-	snip.rv += '\n' + snip.mkline('', indent='')
-	snip += triple_quotes(snip)
-else:
-	snip.rv = ""`
-	def fget(self):
-		return self._$1$0
-
-	def fset(self, value):
-		self._$1 = value
-	return locals()
-
-$1 = property(**$1(), doc=$1.__doc__)
-endsnippet
-
 
 ####################
 # If / Else / Elif #
@@ -581,71 +551,42 @@ finally:
 endsnippet
 
 
-######################
-# Assertions & Tests #
-######################
-
-snippet ae "Assert equal" b
-self.assertEqual(${1:${VISUAL:first}}, ${2:second})
-endsnippet
-
-snippet at "Assert True" b
-self.assertTrue(${1:${VISUAL:expression}})
-endsnippet
-
-snippet af "Assert False" b
-self.assertFalse(${1:${VISUAL:expression}})
-endsnippet
-
-snippet aae "Assert almost equal" b
-self.assertAlmostEqual(${1:${VISUAL:first}}, ${2:second})
-endsnippet
-
-snippet ar "Assert raises" b
-self.assertRaises(${1:exception}, ${2:${VISUAL:func}}${3/.+/, /}${3:arguments})
-endsnippet
-
-snippet an "Assert is None" b
-self.assertIsNone(${1:${VISUAL:expression}})
-endsnippet
-
-snippet ann "Assert is not None" b
-self.assertIsNotNone(${1:${VISUAL:expression}})
-endsnippet
-
-snippet testcase "pyunit testcase" b
-class Test${1:Class}(${2:unittest.TestCase}):
-
-	`!p snip.rv = triple_quotes(snip)`${3:Test case docstring.}`!p snip.rv = triple_quotes(snip)`
-
-	def setUp(self):
-		${4:pass}
-
-	def tearDown(self):
-		${5:pass}
-
-	def test_${6:name}(self):
-		${7:${VISUAL:pass}}
-endsnippet
-
-snippet doc "doc block (triple quotes)"
-`!p snip.rv = triple_quotes(snip)`
-${1:${VISUAL:doc}}
-`!p snip.rv = triple_quotes(snip)`
-endsnippet
-
-snippet pmdoc "pocoo style module doc string" b
-# -*- coding: utf-8 -*-
+snippet doc "doc for function"
 """
-	`!p snip.rv = get_dir_and_file_name(snip)`
-	`!p snip.rv = '~' * len(get_dir_and_file_name(snip))`
+TODO: Docstring.
 
-	${1:DESCRIPTION}
+Parameters
+----------
+${1:arg1} : ${2: TODO}
 
-	:copyright: (c) `date +%Y` by ${2:YOUR_NAME}.
-	:license: ${3:LICENSE_NAME}, see LICENSE for more details.
+Returns
+-------
+TODO
+
 """
-$0
+endsnippet
+
+snippet rwprop "Read write property" b
+def ${1:name}():
+	`!p snip.rv = triple_quotes(snip) if t[2] else ''
+`${2:TODO: Docstring for $1.}`!p
+if t[2]:
+	snip >> 1
+	style = get_style(snip)
+	snip.rv += '\n' + snip.mkline('', indent='')
+	snip += format_return(style)
+	snip.rv += '\n' + snip.mkline('', indent='')
+	snip += triple_quotes(snip)
+else:
+	snip.rv = ""`
+	def fget(self):
+		return self._$1$0
+
+	def fset(self, value):
+		self._$1 = value
+	return locals()
+
+$1 = property(**$1(), doc=$1.__doc__)
 endsnippet
 
 

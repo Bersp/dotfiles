@@ -102,7 +102,7 @@ function _G.latex_section_picker()
   end
 
   pickers.new(opts, {
-    prompt_title = 'Custom Picker',
+    prompt_title = 'Sections',
     finder = finders.new_table(sections_array),
     sorter = sorters.fuzzy_with_index_bias(),
 
@@ -115,7 +115,3 @@ function _G.latex_section_picker()
 
   }):find()
 end
-
-vim.api.nvim_set_keymap('n', '<leader>ln', ':call v:lua.latex_new_section()<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>ll', ':call v:lua.latex_section_picker()<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader>lm', ':e main.tex<cr>', {})

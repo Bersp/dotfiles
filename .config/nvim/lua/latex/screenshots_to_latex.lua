@@ -52,7 +52,3 @@ function _G.subscribe_screenshot ()
 	print(' ')
 	print('Copied ' .. screenshot_file .. ' as ' .. fig_path)
 end
-
-
-vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ls', ':call v:lua.save_last_screenshot()<cr>', {})
-vim.api.nvim_buf_set_keymap(0, 'n', '<leader>l<S-s>', ':call v:lua.subscribe_screenshot()<cr>', {})

@@ -44,14 +44,14 @@ require('packer').startup(function()
 	use 'windwp/nvim-autopairs'
 	use 'hkupty/iron.nvim' -- ipython interaction
 	use {'nvim-telescope/telescope.nvim', -- Telescope
-			 requires = {{'nvim-lua/plenary.nvim'};
+			 requires = {'nvim-lua/plenary.nvim';
 			 						 {'kyazdani42/nvim-web-devicons', opt = true}}
 		 }
+	use {'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim'}
 
 -- LSP
 	use 'neovim/nvim-lspconfig'
 	use 'glepnir/lspsaga.nvim'
-	--use 'nvim-lua/completion-nvim'
 	use 'hrsh7th/nvim-compe'
 end)
 -- }}}
@@ -80,6 +80,8 @@ end)
 	opt.foldlevel      = 99    -- don't fold if i don't say so
 	opt.mouse		   		 = 'a'   -- use mouse
 	opt.breakindent    = true  -- breaklines with tabs
+	opt.gdefault       = true  -- breaklines with tabs
+	opt.spelllang      = 'es,en'
 
 	-- Indent
 	opt.autoindent     = true

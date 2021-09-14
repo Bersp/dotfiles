@@ -9,6 +9,39 @@ $0
 \end{document}
 endsnippet
 
+# Minipages
+snippet minipage "Generic minipages" b
+\begin{minipage}{0.49\textwidth}
+  $1
+\end{minipage} \hfill
+\begin{minipage}{0.49\textwidth}
+  $2
+\end{minipage}
+$0
+endsnippet
+
+snippet 2figs "Two figures in minipages" b
+\begin{minipage}{0.49\textwidth}
+  \begin{figure}
+    \includegraphics[width=\linewidth]{$1}
+  \end{figure}
+\end{minipage} \hfill
+\begin{minipage}{0.49\textwidth}
+  \begin{figure}
+    \includegraphics[width=\linewidth]{$2}
+  \end{figure}
+\end{minipage}
+$0
+endsnippet
+
+# Frame
+snippet frame "New frame" b
+\begin{frame}{$1}
+	$0
+\end{frame}
+$0
+endsnippet
+
 # Bold text
 snippet bf "Bold text"
 \textbf{$1}$0

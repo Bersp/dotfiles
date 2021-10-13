@@ -1,4 +1,4 @@
-vim.opt.spell = true
+vim.o.spell = true
 
 keymap_opt = {noremap = true}
 

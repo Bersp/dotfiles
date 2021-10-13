@@ -37,6 +37,7 @@ require('packer').startup(function()
 	use 'lilydjwg/colorizer' -- colors on files e.g.#000
 	use 'junegunn/goyo.vim' -- goyo
 	use 'dstein64/vim-startuptime'
+	--use 'christianchiarulli/nvcode-color-schemes.vim'
 
 -- Lua Plugins
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}  -- treesitter
@@ -53,6 +54,7 @@ require('packer').startup(function()
 	use 'neovim/nvim-lspconfig'
 	use 'glepnir/lspsaga.nvim'
 	use 'hrsh7th/nvim-compe'
+
 end)
 -- }}}
 
@@ -122,6 +124,10 @@ end)
 	-- Yank and paste from clipboard
 	map('', '<leader>y', '"+y')
 	map('', '<leader>p', '"+p')
+
+	-- Yank and paste from clipboard
+	map('', '<S-h>', '^')
+	map('', '<S-L>', '$')
 
 	-- Yank to end of the line
 	map('n', '<S-y>', 'y$')

@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
+  neoformat = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neoformat"
+  },
   neorg = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neorg"

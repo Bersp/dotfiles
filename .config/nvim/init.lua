@@ -38,6 +38,7 @@ require('packer').startup(function()
 	use 'junegunn/goyo.vim' -- goyo
 	use 'dstein64/vim-startuptime'
 	--use 'christianchiarulli/nvcode-color-schemes.vim'
+	use 'sbdchd/neoformat' -- format code
 
 -- Lua Plugins
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}  -- treesitter

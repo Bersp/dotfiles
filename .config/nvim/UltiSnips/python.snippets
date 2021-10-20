@@ -28,6 +28,22 @@ snippet fig "Add figure with one ax" b
 fig, ax = plt.subplots(figsize=(12, 8))$0
 endsnippet
 
+snippet vifmain "ifmain" b
+def main():
+	${VISUAL}
+	$0
+if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
+	main()
+endsnippet
+
+snippet ifmain "ifmain" b
+def main():
+	$0
+
+if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
+	main()
+endsnippet
+
 # -----------------------------------------------------------------------------
 
 ################
@@ -40,10 +56,6 @@ snippet #! "#!/usr/bin/env python" b
 $0
 endsnippet
 
-snippet ifmain "ifmain" b
-if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
-	${1:${VISUAL:main()}}
-endsnippet
 
 snippet with "with" b
 with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:
@@ -92,10 +104,10 @@ def get_args(arglist):
 	args = [arg for arg in args if arg.name != 'self']
 	return args
 def get_quoting_style(snip):
-	style = snip.opt("g:ultisnips_python_quoting_style", "double")
-	if style == 'single':
-		return SINGLE_QUOTES
-	return DOUBLE_QUOTES
+	style = snip.opt("g:ultisnips_python_quoting_style", "single")
+	if style == 'double':
+		return DOUBLE_QUOTES
+	return SINGLE_QUOTES
 def triple_quotes(snip):
 	style = snip.opt("g:ultisnips_python_triple_quoting_style")
 	if not style:

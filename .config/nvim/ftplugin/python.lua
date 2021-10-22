@@ -22,6 +22,6 @@ _G.python_compiler()
 
 vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>gm', '/def main():<CR>zz', {noremap = true})
 
-vim.api.nvim_buf_set_keymap(0, 'n', '<C-l>', ':Neoformat! python | PyrightOrganizeImports<CR>', {noremap = true})
-vim.api.nvim_buf_set_keymap(0, 'v', '<C-l>', ':Neoformat! python | PyrightOrganizeImports<CR>', {noremap = true})
+vim.api.nvim_buf_set_keymap(0, 'n', '<leader><S-f>', ':Neoformat! python | PyrightOrganizeImports<CR>', {noremap = true})
+vim.api.nvim_buf_set_keymap(0, 'v', '<leader><S-f>', ':Neoformat! python | PyrightOrganizeImports<CR>', {noremap = true})
 

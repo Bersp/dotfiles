@@ -54,7 +54,12 @@ require('packer').startup(function()
 -- LSP
 	use 'neovim/nvim-lspconfig'
 	use 'glepnir/lspsaga.nvim'
-	use 'hrsh7th/nvim-compe'
+
+-- Completition
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/nvim-cmp'
+	use 'onsails/lspkind-nvim'
 
 end)
 -- }}}

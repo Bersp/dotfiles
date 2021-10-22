@@ -69,6 +69,14 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
   colorizer = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/colorizer"
@@ -84,6 +92,10 @@ _G.packer_plugins = {
   ["iron.nvim"] = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/iron.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
@@ -109,9 +121,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

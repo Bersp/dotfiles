@@ -1,5 +1,18 @@
 priority -50
 
+snippet --- "Python section" b
+# ----------------------------------------------------------------------
+# $0
+endsnippet
+
+snippet f' "Auto fstring" Ai
+f'$0'
+endsnippet
+
+snippet r' "Auto rstring" Ai
+r'$0'
+endsnippet
+
 snippet iplt "import matplotlib.pyplot as plt" b
 import matplotlib.pyplot as plt$0
 endsnippet
@@ -16,16 +29,28 @@ snippet isp "import scipy as sp" b
 import scipy as sp$0
 endsnippet
 
-snippet ifsp "import scipy" b
-from scipy.$1 import$0
-endsnippet
-
 snippet af "Apply function" i
 $1(${VISUAL})$0
 endsnippet
 
 snippet fig "Add figure with one ax" b
 fig, ax = plt.subplots(figsize=(12, 8))$0
+endsnippet
+
+snippet 2fig "Add figure with two axes" b
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 8))$0
+endsnippet
+
+snippet 4fig "Add figure with four axes" b
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))$0
+axes = axes.flatten()
+endsnippet
+
+snippet ishow "plt.imshow()" b
+plt.imshow($1)
+plt.colorbar()
+plt.show()
+$0
 endsnippet
 
 snippet vifmain "ifmain" b

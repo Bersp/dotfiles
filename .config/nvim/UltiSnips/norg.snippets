@@ -5,3 +5,15 @@ endsnippet
 snippet t "Tag a name"
 [${VISUAL}]($1)$0
 endsnippet
+
+snippet "(\\?\w+)(,\.|\.,)" "Tag postfix auto" riA
+[`!p snip.rv=match.group(1)`]($1) $0
+endsnippet
+
+snippet com "Create combat"
+@combat
+| Combate: $1
+| Maté: _
+@end
+$0
+endsnippet

@@ -74,7 +74,11 @@ vim.cmd"hi CmpItemMenu guifg=#4C566A"
 
 -- Autopairs
 require("nvim-autopairs.completion.cmp").setup {
-   map_cr = false, --  map <CR> on insert mode
-   map_complete = true, -- it will auto insert `(` after select function or method item
+	map_cr = true, --  map <CR> on insert mode
+	map_complete = true, -- it will auto insert `(` after select function or method item
+	map_char = { -- modifies the function or method delimiter by filetypes
+	all = '(',
+	tex = '{'
+	}
 }
 end

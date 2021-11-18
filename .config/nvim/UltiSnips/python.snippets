@@ -5,6 +5,14 @@ snippet --- "Python section" b
 # $0
 endsnippet
 
+snippet f "Wrap variable in f'{var}'" i
+f'{${VISUAL}}$0'
+endsnippet
+
+snippet f= "Wrap variable in f'{var = }'" i
+f'{${VISUAL} = }$0'
+endsnippet
+
 snippet f' "Auto fstring" Ai
 f'$0'
 endsnippet

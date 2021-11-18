@@ -16,6 +16,9 @@ saga.init_lsp_saga{
 	 },
 	 definition_preview_icon = '',
 	 rename_prompt_prefix = ':',
+	 code_action_prompt = {
+		 enable = false,
+	 },
 }
 
 local map = vim.api.nvim_set_keymap

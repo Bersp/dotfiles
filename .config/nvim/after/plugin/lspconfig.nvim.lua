@@ -58,4 +58,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
 -- Disable auto signature
 vim.cmd[[let g:completion_enable_auto_signature = 0]]
+
+-- Mappings
+local map = vim.api.nvim_set_keymap
+local opts = {noremap = true, silent= true}
+map('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 end

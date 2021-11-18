@@ -71,111 +71,143 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   colorizer = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/colorizer"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/colorizer",
+    url = "https://github.com/lilydjwg/colorizer"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/fzf.vim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["goyo.vim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/goyo.vim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    url = "https://github.com/junegunn/goyo.vim"
   },
   ["iron.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/iron.nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/iron.nvim",
+    url = "https://github.com/hkupty/iron.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   neoformat = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neoformat"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   neorg = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neorg"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neorg",
+    url = "https://github.com/nvim-neorg/neorg"
   },
   nerdcommenter = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/scrooloose/nerdcommenter"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ultisnips = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/ultisnips"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/sirver/ultisnips"
   },
   ["vCoolor.vim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vCoolor.vim"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vCoolor.vim",
+    url = "https://github.com/KabbAmine/vCoolor.vim"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-indent-object"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-indent-object"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-indent-object",
+    url = "https://github.com/michaeljsmith/vim-indent-object"
   },
   ["vim-startuptime"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-startuptime"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   vimtex = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vimtex"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 

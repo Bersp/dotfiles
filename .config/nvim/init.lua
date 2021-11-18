@@ -39,6 +39,8 @@ require('packer').startup(function()
 	use 'dstein64/vim-startuptime'
 	--use 'christianchiarulli/nvcode-color-schemes.vim'
 	use 'sbdchd/neoformat' -- format code
+	--use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}} -- markdown systax
+	use 'vimwiki/vimwiki'
 
 -- Lua Plugins
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}  -- treesitter
@@ -68,6 +70,10 @@ end)
 	-- Color
 	opt.termguicolors = true
 	cmd[[color bersp_nord]]
+	--cmd[[
+	--hi! Normal ctermbg=NONE guibg=NONE
+	--hi! NonText ctermbg=NONE guibg=NONE
+	--]]
 
 	-- Change defaults
 	opt.relativenumber = true  -- show line numbers
@@ -88,8 +94,9 @@ end)
 	opt.foldlevel      = 99    -- don't fold if i don't say so
 	opt.mouse		   		 = 'a'   -- use mouse
 	opt.breakindent    = true  -- breaklines with tabs
-	opt.gdefault       = true  -- breaklines with tabs
+	opt.gdefault       = true
 	opt.spelllang      = 'es,en'
+	opt.linebreak      = true
 
 	-- Indent
 	opt.autoindent     = true

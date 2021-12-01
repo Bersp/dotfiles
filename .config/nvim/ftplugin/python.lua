@@ -13,6 +13,26 @@ end
 vim.cmd("command! SetManimCompiler execute 'call v:lua.manim_compiler()'")
 vim.cmd("command! SetPythonCompiler execute 'call v:lua.python_compiler()'")
 
+-- TODO: Función para dar formato a todo el texto EXCLUYENDO los comentarios
+--function _G.neoformat_over_not_comment_lines()
+	--local all_lines = vim.api.nvim_buf_get_lines(0, 0, -1, true)
+
+	--local li = 0
+	--local lf = 0
+	--local is_comment = false
+
+	--for i, l in ipairs(all_lines) do
+		--if l:find('^ *#') == nil then
+			--is_comment = false
+			--lf = i
+		--else
+			--if not is_comment then vim.cmd(li .. ',' .. lf-1 .. 'Neoformat! python yapf') end
+			--is_comment = true
+			--li = i+1
+		--end
+	--end
+--end
+
 -- File options
 vim.cmd("call matchadd('ErrorMsg', '\\%81v', 100)")
 vim.bo.expandtab = true

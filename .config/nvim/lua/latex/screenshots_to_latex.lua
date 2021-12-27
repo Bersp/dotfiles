@@ -4,8 +4,8 @@ function _G.save_last_screenshot ()
 	local fn = vim.fn
 
 	local nums = {}
-	for n in fn.glob('figs/*'):gmatch('figs/ss(%d)') do
-		nums[#nums + 1] = n
+	for n in fn.glob('figs/*'):gmatch('figs/ss(%d+)') do
+		nums[#nums + 1] = tonumber(n)
 	end
 
 	table.sort(nums)
@@ -30,8 +30,8 @@ function _G.subscribe_screenshot ()
 	local fn = vim.fn
 
 	local nums = {}
-	for n in fn.glob('figs/*'):gmatch('figs/ss(%d)') do
-		nums[#nums + 1] = n
+	for n in fn.glob('figs/*'):gmatch('figs/ss(%d+)') do
+		nums[#nums + 1] = tonumber(n)
 	end
 
 	table.sort(nums)
@@ -51,4 +51,5 @@ function _G.subscribe_screenshot ()
 	os.execute('cp ' .. screenshot_file .. ' ' .. fig_path)
 	print(' ')
 	print('Copied ' .. screenshot_file .. ' as ' .. fig_path)
+	print(nums)
 end

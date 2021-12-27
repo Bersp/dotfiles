@@ -6,7 +6,7 @@ require('telescope').setup{
       i = {
 		["<c-j>"] = actions.move_selection_next,
 		["<c-k>"] = actions.move_selection_previous,
-		["<esc>"] = actions.close,
+		--["<esc>"] = actions.close,
       },
     },
 	file_ignore_patterns = {"%.aux", "%.gz", "%.log", "%.fls", "%.fdb_latexmk", "%.pdf", "%.hdf5", "%.npy", "%.png", "%.jpg", "%.gif", "%.tif", "%.tiff", "%.eot", "%.doctree", "%.woff"},

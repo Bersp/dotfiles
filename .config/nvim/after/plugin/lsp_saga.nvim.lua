@@ -28,7 +28,7 @@ map('n', '<leader>gr', '<cmd>Lspsaga lsp_finder<CR>', opts)
 map('n', '<leader>gp', '<cmd>Lspsaga preview_definition<CR>', opts)
 map('n', '<leader>R', '<cmd>Lspsaga rename<CR>', opts)
 
-map('n', '<S-k>', '<cmd>Lspsaga hover_doc<CR>', opts)
+map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
 
 map('n', '<C-f>', '<cmd>lua require("lspsaga.action", opts).smart_scroll_with_saga(1)<CR>', opts)

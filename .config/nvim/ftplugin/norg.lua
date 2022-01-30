@@ -9,12 +9,12 @@ vim.spell = true
 function add_object(object_name, object_tag, l)
 		vim.api.nvim_buf_set_keymap(
 		0, 'n', '<Leader>n' .. l,
-		'?' .. object_name .. '<CR>}O  []('.. object_tag ..'): <esc>F[a',
+		'?' .. object_name .. '<CR>}O  []{$ '.. object_tag ..'}: <esc>F[a',
 		{noremap = true}
 	)
 	vim.api.nvim_buf_set_keymap(
 		0, 'v', '<Leader>n' .. l,
-		'y?' .. object_name .. '<CR>}O  [<C-o>p]('.. object_tag ..'): ',
+		'y?' .. object_name .. '<CR>}O  [<C-o>p]{$ '.. object_tag ..'}: ',
 		{noremap = true}
 	)
 end

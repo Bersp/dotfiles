@@ -37,7 +37,6 @@ require('packer').startup(function()
 	use 'lilydjwg/colorizer' -- colors on files e.g.#000
 	use 'junegunn/goyo.vim' -- goyo
 	use 'dstein64/vim-startuptime'
-	--use 'christianchiarulli/nvcode-color-schemes.vim'
 	use 'sbdchd/neoformat' -- format code
 	--use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}} -- markdown systax
 	use 'vimwiki/vimwiki'
@@ -70,6 +69,10 @@ end)
 	-- Color
 	opt.termguicolors = true
 	cmd[[color bersp_nord]]
+	--cmd[[
+		--let g:everforest_background = 'hard'
+		--color everforest
+	--]]
 	--cmd[[
 	--hi! Normal ctermbg=NONE guibg=NONE
 	--hi! NonText ctermbg=NONE guibg=NONE

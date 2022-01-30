@@ -51,5 +51,4 @@ function _G.subscribe_screenshot ()
 	os.execute('cp ' .. screenshot_file .. ' ' .. fig_path)
 	print(' ')
 	print('Copied ' .. screenshot_file .. ' as ' .. fig_path)
-	print(nums)
 end

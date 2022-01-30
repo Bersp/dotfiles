@@ -18,3 +18,11 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<leader>lm', ':e main.tex<CR>', keymap_opt)
 require('latex/screenshots_to_latex')
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ls', ':call v:lua.save_last_screenshot()<CR>', keymap_opt)
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>l<S-s>', ':call v:lua.subscribe_screenshot()<CR>', keymap_opt)
+
+
+-- Inkscape-figures
+vim.cmd[[
+	imap <C-f> <Esc>: silent exec ':!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>
+
+	nmap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
+]]

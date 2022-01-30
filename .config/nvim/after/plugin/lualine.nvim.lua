@@ -5,18 +5,31 @@ vim.o.showmode = false
 
 -- Color table for highlights
 local colors = {
-  bg = '#3B4252',
-  fg = '#d8DEE9',
-  yellow = '#EBCB8B',
-  cyan = '#8fbCBB',
-  darkblue = '#081633',
-  green = '#A3BE8C',
-  orange = '#D08770',
-  violet = '#B48EAD',
-  magenta = '#B48EAD',
-  blue = '#5E81AC',
-  red = '#BF616A'
+	bg = '#3B4252',
+	fg = '#d8DEE9',
+	yellow = '#EBCB8B',
+	cyan = '#8fbCBB',
+	darkblue = '#081633',
+	green = '#A3BE8C',
+	orange = '#D08770',
+	violet = '#B48EAD',
+	magenta = '#B48EAD',
+	blue = '#5E81AC',
+	red = '#BF616A'
 }
+
+--local colors = {
+	--bg = '#323c41',
+	--fg = '#d3c6aa',
+	--yellow = '#dbbc7f',
+	--cyan = '#7fbbb3',
+	--green = '#a7c080',
+	--orange = '#e69875',
+	--violet = '#d699b6',
+	--magenta = '#d699b6',
+	--blue = '#7fbbb3',
+	--red = '#e67e80'
+--}
 
 
 local conditions = {

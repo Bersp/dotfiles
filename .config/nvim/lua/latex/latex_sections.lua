@@ -2,6 +2,7 @@ local actions = require('telescope.actions')
 local finders = require('telescope.finders')
 local pickers = require('telescope.pickers')
 local sorters = require('telescope.sorters')
+local action_state = require('telescope.actions.state')
 
 function file_exists(filename)
 	local file = io.open(filename, 'r')
@@ -57,14 +58,14 @@ function _G.latex_new_section()
 end
 
 actions.delete_file = function(prompt_bufnr)
-  local selected_entry = actions.get_selected_entry()[1]
+  local selected_entry = action_state.get_selected_entry()[1]
 
   os.remove(selected_entry)
   vim.cmd('echo "File removed: ' .. selected_entry .. '"')
 end
 
 actions.rename_file = function(prompt_bufnr)
-  local old_filename_path = actions.get_selected_entry()[1]
+  local old_filename_path = action_state.get_selected_entry()[1]
 	actions.close(prompt_bufnr)
 
 	print('Change name of section associated to ' .. old_filename_path)

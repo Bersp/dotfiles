@@ -38,8 +38,8 @@ require('packer').startup(function()
 	use 'junegunn/goyo.vim' -- goyo
 	use 'dstein64/vim-startuptime'
 	use 'sbdchd/neoformat' -- format code
-	--use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}} -- markdown systax
-	use 'vimwiki/vimwiki'
+	use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}} -- markdown systax
+	use 'untitled-ai/jupyter_ascending.vim'
 
 -- Lua Plugins
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}  -- treesitter
@@ -47,10 +47,11 @@ require('packer').startup(function()
 	use 'windwp/nvim-autopairs'
 	use 'hkupty/iron.nvim' -- ipython interaction
 	use {'nvim-telescope/telescope.nvim', -- Telescope
-			 requires = {'nvim-lua/plenary.nvim';
-			 						 {'kyazdani42/nvim-web-devicons', opt = true}}
+       requires = {'nvim-lua/plenary.nvim';
+                   {'kyazdani42/nvim-web-devicons', opt = true}}
 		 }
 	use {'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim'}
+	use {'eddiebergman/nvim-treesitter-pyfold', requires = 'nvim-treesitter/nvim-treesitter'}
 
 -- LSP
 	use 'neovim/nvim-lspconfig'

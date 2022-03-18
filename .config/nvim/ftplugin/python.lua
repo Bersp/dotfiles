@@ -4,6 +4,13 @@ function _G.python_compiler()
 	vim.cmd('nmap <buffer> <Leader><Leader><CR> :update<bar>vs<Space>\\|<Space>terminal ipython -i -c "\\%run %"<CR>')
 end
 
+
+function _G.jupyter_compiler()
+	vim.cmd("nmap <buffer> <Leader><CR> :w<CR>\\| <Plug>JupyterExecute")
+	vim.cmd("nmap <buffer> <Leader><Leader><CR> :w<CR>\\| <Plug>JupyterExecuteAll")
+end
+
+
 function _G.manim_compiler_select_scene(compiler)
 	local scene = vim.fn.input('Insert scene: ')
 
@@ -21,6 +28,7 @@ function _G.manim_compiler_select_scene(compiler)
 
 	vim.cmd("nmap <buffer> <Leader><CR> :update<bar>!".. compiler .." -n".. n .." -q".. quality .." ".. play_cmd .." % ".. scene .."<CR>")
 end
+
 
 function _G.manim_compiler(compiler)
 	local scene = ''
@@ -75,10 +83,12 @@ for i, l in ipairs(all_lines) do
 		_G.manim_compiler('manim')
 	elseif l:find('from manimlib import *') ~= nil then
 		_G.manim_compiler('manimgl')
+	elseif l:find('jupytext') ~= nil then
+		_G.jupyter_compiler()
 	end
 end
 
--- Mapiings
+-- Mapings
 vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>gm', '/def main():<CR>zz', {noremap = true})
 
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader><S-f>', ':Neoformat! python<CR>', {noremap = true})

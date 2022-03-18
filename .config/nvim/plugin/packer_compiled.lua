@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/iron.nvim",
     url = "https://github.com/hkupty/iron.nvim"
   },
+  ["jupyter_ascending.vim"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/jupyter_ascending.vim",
+    url = "https://github.com/untitled-ai/jupyter_ascending.vim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -149,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-pyfold"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-treesitter-pyfold",
+    url = "https://github.com/eddiebergman/nvim-treesitter-pyfold"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -163,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  tabular = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/tabular",
+    url = "https://github.com/godlygeek/tabular"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -189,6 +204,11 @@ _G.packer_plugins = {
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-indent-object",
     url = "https://github.com/michaeljsmith/vim-indent-object"
   },
+  ["vim-markdown"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-markdown",
+    url = "https://github.com/plasticboy/vim-markdown"
+  },
   ["vim-startuptime"] = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-startuptime",
@@ -203,11 +223,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
-  },
-  vimwiki = {
-    loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vimwiki",
-    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
@@ -217,5 +232,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

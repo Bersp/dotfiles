@@ -1,4 +1,4 @@
-from color_fuctions import interpolate_color
+from color_fuctions import interpolate_color # esto está en Dropbox/Utils ahora
 
 COLOR_NAME = 'yerba'
 

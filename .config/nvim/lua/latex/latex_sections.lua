@@ -105,7 +105,7 @@ function _G.latex_section_picker()
   pickers.new(opts, {
     prompt_title = 'Sections',
     finder = finders.new_table(sections_array),
-    sorter = sorters.fuzzy_with_index_bias(),
+    sorter = sorters.get_fuzzy_file(),
 
     attach_mappings = function(_, map)
       map('i', '<c-d>', actions.delete_file)

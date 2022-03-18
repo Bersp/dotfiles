@@ -8,7 +8,20 @@ require('neorg').setup {
 																neorg_leader = "<Leader>o" -- This is the default if unspecified
 														}
 												},
-        ["core.norg.concealer"] = {}, -- Allows for use of icons
+        ["core.norg.concealer"] = {
+								config = {
+								icons = {
+										todo = {
+											done = {icon = ""},
+											pending = {icon = "+"},
+											on_hold = {icon = ""},
+											urgent = {icon = "!"},
+											cancelled = {icon = "/"},
+											uncertain = {icon = "?"},
+										},
+									}
+							}
+		},
         ["core.norg.dirman"] = { -- Manage your directories with Neorg
             config = {
                 workspaces = {

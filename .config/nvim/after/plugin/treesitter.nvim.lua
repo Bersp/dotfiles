@@ -3,8 +3,18 @@ require('nvim_treesitter')
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr='nvim_treesitter#foldexpr()'
 
---Incremental selection
 require'nvim-treesitter.configs'.setup {
+
+  indent = {
+    enable = true
+	},
+
+	pyfold = {
+			enable = true,
+			custom_foldtext = true -- Sets provided foldtext on window where module is active
+	},
+
+	--Incremental selection
 	incremental_selection = {
 		enable = true,
 		keymaps = {
@@ -15,4 +25,5 @@ require'nvim-treesitter.configs'.setup {
 		},
 	},
 }
+
 end

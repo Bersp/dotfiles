@@ -6,7 +6,8 @@ vim.o.foldexpr='nvim_treesitter#foldexpr()'
 require'nvim-treesitter.configs'.setup {
 
   indent = {
-    enable = true
+    enable = true,
+    disable = {"python"}
 	},
 
 	pyfold = {

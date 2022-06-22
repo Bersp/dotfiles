@@ -27,6 +27,7 @@ require('packer').startup(function()
 	use 'scrooloose/nerdcommenter' -- plugin para comentar
 	use 'tpope/vim-surround' -- surround
 	use 'junegunn/fzf.vim' -- fuzzy finder
+	use 'windwp/nvim-autopairs' -- autopairs
 
 -- Other Plugins
 	use 'sirver/ultisnips' -- better snippets (suscribe Tab)
@@ -35,23 +36,23 @@ require('packer').startup(function()
 	use 'michaeljsmith/vim-indent-object' -- indent objects
 	use 'KabbAmine/vCoolor.vim' -- color picker
 	use 'lilydjwg/colorizer' -- colors on files e.g.#000
-	use 'junegunn/goyo.vim' -- goyo
 	use 'dstein64/vim-startuptime'
 	use 'sbdchd/neoformat' -- format code
-	use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}} -- markdown systax
-	use 'untitled-ai/jupyter_ascending.vim'
+	use 'untitled-ai/jupyter_ascending.vim' -- jupyter
 
 -- Lua Plugins
-	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}  -- treesitter
+	use {'nvim-treesitter/nvim-treesitter'}--, run = ':TSUpdate'}  -- treesitter
 	use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'}} -- statusline
-	use 'windwp/nvim-autopairs'
 	use 'hkupty/iron.nvim' -- ipython interaction
 	use {'nvim-telescope/telescope.nvim', -- Telescope
-       requires = {'nvim-lua/plenary.nvim';
-                   {'kyazdani42/nvim-web-devicons', opt = true}}
-		 }
+			 requires = {'nvim-lua/plenary.nvim';
+									 {'kyazdani42/nvim-web-devicons', opt = true}},}
 	use {'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim'}
-	use {'eddiebergman/nvim-treesitter-pyfold', requires = 'nvim-treesitter/nvim-treesitter'}
+	--use {'eddiebergman/nvim-treesitter-pyfold', requires = 'nvim-treesitter/nvim-treesitter'}
+	use {'kyazdani42/nvim-tree.lua', -- folders
+			 requires = {'kyazdani42/nvim-web-devicons'}}
+	use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- folding
+	
 
 -- LSP
 	use 'neovim/nvim-lspconfig'
@@ -62,6 +63,14 @@ require('packer').startup(function()
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/nvim-cmp'
 	use 'onsails/lspkind-nvim'
+
+-- Writing
+	use {'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}} -- markdown systax
+	use({'iamcco/markdown-preview.nvim', --markdown preview
+			 run = function() vim.fn["mkdp#util#install"]() end})
+	use 'preservim/vim-pencil'
+	use 'folke/zen-mode.nvim'
+
 
 end)
 -- }}}
@@ -82,6 +91,7 @@ end)
 	-- Change defaults
 	opt.relativenumber = true  -- show line numbers
 	opt.number         = true  -- but show the actual number for the line we're on
+	opt.laststatus     = 3
 
 	opt.incsearch      = true  -- makes search act like search in modern browsers
 	opt.showmatch      = true  -- show matching brackets when text indicator is over them
@@ -108,6 +118,9 @@ end)
 	opt.shiftwidth     = 4
 	opt.expandtab      = false
 
+	-- No numbers in vim terminal
+	cmd[[autocmd TermOpen * setlocal nonumber norelativenumber]]
+
 	-- Return to last edit position when opening files
 	cmd[[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 	
@@ -128,6 +141,9 @@ end)
 		au WinLeave * setlocal nocursorline
 	augroup END
 	]]
+
+	-- Show  name of the file on the top right corner
+	opt.winbar = [[%=%m %f ]]
 
 -- }}}
 
@@ -158,6 +174,10 @@ end)
 	map('n', '<C-h>', '<C-w>h')
 	map('n', '<C-l>', '<C-w>l')
 
+	-- Toggle wrap
+	map('n', '<F11>', ':set wrap!<CR>')
+
+
 	-- Sustitude/replace word under de cursor TODO: Pasar a lua
 	map('n', '<Leader>s', ':%s/\\<<C-r><C-w>\\>//<Left>')
 
@@ -166,6 +186,7 @@ end)
 
 	-- Normal-mode in Terminal-mode (and not in fzf) TODO: Pasar a lua
 	vim.cmd[[autocmd TermOpen * tnoremap <Esc> <c-\><c-n>]]
+	vim.cmd[[autocmd TermOpen * nnoremap <CR> i<CR>]]
 -- }}}
 
 -- UltiSnips config (odio tener que poner esto acá) {{{

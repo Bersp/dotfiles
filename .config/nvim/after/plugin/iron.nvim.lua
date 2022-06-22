@@ -1,14 +1,38 @@
-local iron = require('iron')
+local iron = require("iron.core")
 
-iron.core.set_config {
-  repl_open_cmd = "10 split",
-  preferred = {
-    python = "ipython"
+iron.setup {
+  config = {
+    -- If iron should expose `<plug>(...)` mappings for the plugins
+    should_map_plug = false,
+    -- Whether a repl should be discarded or not
+    scratch_repl = true,
+    -- Your repl definitions come here
+    repl_definition = {
+      sh = {
+        command = {"zsh"}
+      }
+    },
+    repl_open_cmd = [[bo sp]],
+  },
+  -- Iron doesn't set keymaps by default anymore. Set them here
+  -- or use `should_map_plug = true` and map from you vim files
+  keymaps = {
+    --send_motion = [[<leader>\]],
+    visual_send = [[<leader>\]],
+		send_file = [[<space>\]],
+    --send_line = [[<space>sl]],
+    --send_mark = [[<space>sm]],
+    --mark_motion = [[<space>mc]],
+    --mark_visual = [[<space>mc]],
+    --remove_mark = [[<space>md]],
+    --cr = [[<space>s<cr>]],
+    --interrupt = [[<space>s<space>]],
+    --exit = [[<space>sq]],
+    --clear = [[<space>cl]],
+  },
+  -- If the highlight is on, you can change how it looks
+  -- For the available options, check nvim_set_hl
+  highlight = {
+    italic = true
   }
 }
-
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true}
-
-map('n', [[<leader>\]], [[<cmd>lua require("iron").core.send(vim.api.nvim_buf_get_option(0,"ft"), vim.api.nvim_buf_get_lines(0, 0, -1, false))<cr>]], opts)
-map('v', [[<leader>\]], [[<Plug>(iron-visual-send)]], opts)

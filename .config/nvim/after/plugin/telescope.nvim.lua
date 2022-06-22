@@ -9,7 +9,7 @@ require('telescope').setup{
 		--["<esc>"] = actions.close,
       },
     },
-	file_ignore_patterns = {"%.aux", "%.gz", "%.log", "%.fls", "%.fdb_latexmk", "%.pdf", "%.hdf5", "%.npy", "%.png", "%.jpg", "%.gif", "%.tif", "%.tiff", "%.eot", "%.doctree", "%.woff"},
+	file_ignore_patterns = {"%.aux", "%.gz", "%.log", "%.fls", "%.fdb_latexmk", "%.pdf", "%.hdf5", "%.npy", "%.png", "%.jpg", "%.gif", "%.tif", "%.tiff", "%.eot", "%.doctree", "%.woff", "__pycache__"},
   },
   extensions = {
   	fzy_native = {
@@ -18,5 +18,10 @@ require('telescope').setup{
 	}
   }
 }
+
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope git_files<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '<leader>fr', ':Rg<CR>', {noremap=true})
+vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', {noremap=true})
 --require('telescope').load_extension('fzy_native')
 end

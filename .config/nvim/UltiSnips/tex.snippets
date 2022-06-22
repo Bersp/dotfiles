@@ -44,6 +44,14 @@ snippet corollary "Corollary frame" b
 \end{corollary}
 endsnippet
 
+snippet \ve "\varepsilon" i
+\varepsilon
+endsnippet
+
+snippet \vf "\varepsilon" i
+\varphi
+endsnippet
+
 # Minipages
 snippet minipage "Generic minipages" b
 \begin{minipage}{0.49\textwidth}
@@ -306,15 +314,19 @@ endsnippet
 
 # Braket
 snippet "\<(.*?)\|" "bra" riA
-\bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+\bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\\varphi')`}
 endsnippet
 
 snippet "\|(.*?)\>" "ket" riA
-\ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
+\ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\\varphi')`}
 endsnippet
 
 snippet "(.*)\\bra{(.*?)}([^\|]*?)\>" "braket" riA
 `!p snip.rv = match.group(1)`\braket{`!p snip.rv = match.group(2)`}{`!p snip.rv = match.group(3).replace('q', f'\psi').replace('f', f'\phi')`}
+endsnippet
+
+snippet "(\\?\w+)>" "ket" ri
+\ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\\varphi')`}
 endsnippet
 
 # Eval

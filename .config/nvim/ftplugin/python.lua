@@ -1,7 +1,7 @@
 -- Functions
 function _G.python_compiler()
-	vim.cmd("nmap <buffer> <Leader><CR> :update<bar>!python3 % \\| less<CR>")
-	vim.cmd('nmap <buffer> <Leader><Leader><CR> :update<bar>vs<Space>\\|<Space>terminal ipython -i -c "\\%run %"<CR>')
+	vim.cmd([[nmap <buffer> <Leader><CR> :update<bar>!python3 '%' \| less<CR>]])
+	vim.cmd([[nmap <buffer> <Leader><Leader><CR> :update<bar>bo sp <bar> ter ipython '%' <CR> <bar> <S-g>]])
 end
 
 
@@ -46,6 +46,8 @@ function _G.manim_compiler(compiler)
 															{noremap = true})
 end
 
+
+--vim.cmd("filetype indent on")
 
 vim.cmd("command! SetManimCompiler execute 'call v:lua.manim_compiler()'")
 vim.cmd("command! SetPythonCompiler execute 'call v:lua.python_compiler()'")
@@ -93,4 +95,3 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>gm', '/def main():<CR>zz', {noremap
 
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader><S-f>', ':Neoformat! python<CR>', {noremap = true})
 vim.api.nvim_buf_set_keymap(0, 'v', '<leader><S-f>', ':Neoformat! python<CR>', {noremap = true})
-

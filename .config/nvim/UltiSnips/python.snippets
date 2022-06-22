@@ -1,7 +1,7 @@
 priority -50
 
-snippet --- "Python section" b
-# ----------------------------------------------------------------------
+snippet --- "--- # Text" b
+# -----------------------------------------------------------------------------
 # $0
 endsnippet
 
@@ -52,13 +52,6 @@ endsnippet
 snippet 4fig "Add figure with four axes" b
 fig, axes = plt.subplots(2, 2, figsize=(12, 8))$0
 axes = axes.flatten()
-endsnippet
-
-snippet ishow "plt.imshow()" b
-plt.imshow($1)
-plt.colorbar()
-plt.show()
-$0
 endsnippet
 
 snippet vifmain "ifmain" b

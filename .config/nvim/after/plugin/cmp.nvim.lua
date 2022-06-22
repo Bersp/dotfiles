@@ -8,10 +8,15 @@ local cmp = require'cmp'
 cmp.setup({
 
   completion = {
-    autocomplete = false
+    --autocomplete = false
+		keyword_length = 3
   },
 
-	documentation = false,
+	--documentation = false,
+	window = {
+				 documentation = false,
+				 completion = cmp.config.window.bordered(),
+			},
 
 	snippet = {
 		expand = function(args)
@@ -22,7 +27,7 @@ cmp.setup({
 	mapping = {
 		['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-e>'] = cmp.mapping.close(),
 		['<C-Space>'] = cmp.mapping.complete(),

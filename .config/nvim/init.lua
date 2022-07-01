@@ -52,6 +52,7 @@ require('packer').startup(function()
 	use {'kyazdani42/nvim-tree.lua', -- folders
 			 requires = {'kyazdani42/nvim-web-devicons'}}
 	use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- folding
+	use { 'michaelb/sniprun', run = 'bash ./install.sh'}
 	
 
 -- LSP

@@ -12,7 +12,7 @@ iron.setup {
         command = {"zsh"}
       }
     },
-    repl_open_cmd = [[bo sp]],
+		repl_open_cmd = [[bo sp]],
   },
   -- Iron doesn't set keymaps by default anymore. Set them here
   -- or use `should_map_plug = true` and map from you vim files
@@ -33,6 +33,6 @@ iron.setup {
   -- If the highlight is on, you can change how it looks
   -- For the available options, check nvim_set_hl
   highlight = {
-    italic = true
+    italic = false
   }
 }

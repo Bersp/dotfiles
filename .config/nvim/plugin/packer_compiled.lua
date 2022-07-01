@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
+  sniprun = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/sniprun",
+    url = "https://github.com/michaelb/sniprun"
+  },
   tabular = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/tabular",

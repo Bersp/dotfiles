@@ -1,4 +1,7 @@
-require("zen-mode").setup {
+local status, zen_mode = pcall(require, 'zen-mode')
+if not status then return end
+
+zen_mode.setup {
 		window = {
 			backdrop = 1, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
 			-- height and width can be:
@@ -23,4 +26,4 @@ require("zen-mode").setup {
 	end,
 }
 
-vim.keymap.set('n', '<F12>', function() return require("zen-mode").toggle() end, {noremap = true})
+--vim.keymap.set('n', '<F12>', function() return require("zen-mode").toggle() end, {noremap = true})

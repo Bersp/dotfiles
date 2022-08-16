@@ -119,10 +119,10 @@ _G.packer_plugins = {
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
-  neoformat = {
+  ["mason.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   neorg = {
     loaded = true,
@@ -133,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/scrooloose/nerdcommenter"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -148,11 +153,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -184,15 +184,20 @@ _G.packer_plugins = {
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
-  sniprun = {
+  ["refactoring.nvim"] = {
     loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/sniprun",
-    url = "https://github.com/michaelb/sniprun"
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
+    url = "https://github.com/ThePrimeagen/refactoring.nvim"
   },
   tabular = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/tabular",
     url = "https://github.com/godlygeek/tabular"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -213,11 +218,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-indent-object"] = {
-    loaded = true,
-    path = "/home/bersp/.local/share/nvim/site/pack/packer/start/vim-indent-object",
-    url = "https://github.com/michaeljsmith/vim-indent-object"
   },
   ["vim-markdown"] = {
     loaded = true,

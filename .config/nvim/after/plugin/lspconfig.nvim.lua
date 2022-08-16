@@ -1,5 +1,5 @@
-if vim.g.lspconfig then
-local nvim_lsp = require('lspconfig')
+local status, nvim_lsp = pcall(require, 'lspconfig')
+if not status then return end
 
 -- Python
 	nvim_lsp.pyright.setup{
@@ -50,6 +50,10 @@ local nvim_lsp = require('lspconfig')
 		},
 	}
 
+-- Javascript
+require'lspconfig'.eslint.setup{}
+require'lspconfig'.tsserver.setup{}
+
 -- Config on_atach
 local on_attach = function(client, bufnr) end
 
@@ -63,4 +67,3 @@ vim.cmd[[let g:completion_enable_auto_signature = 0]]
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent= true}
 map('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-end

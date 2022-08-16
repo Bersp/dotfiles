@@ -1,3 +1,6 @@
+local status, ufo = pcall(require, 'ufo')
+if not status then return end
+
 vim.wo.foldcolumn = '0'
 vim.wo.foldlevel = 99 -- feel free to decrease the value
 vim.wo.foldenable = true
@@ -7,9 +10,7 @@ capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true
 }
---
 
-require('ufo').setup()
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}
@@ -40,13 +41,13 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 end
 
 -- global handler
-require('ufo').setup({
+ufo.setup({
     fold_virt_text_handler = handler
 })
 
 -- buffer scope handler
 -- will override global handler if it is existed
 local bufnr = vim.api.nvim_get_current_buf()
-require('ufo').setFoldVirtTextHandler(bufnr, handler)
+ufo.setFoldVirtTextHandler(bufnr, handler)
 
 vim.cmd[[hi default link UfoFoldedEllipsis SpecialComment]]

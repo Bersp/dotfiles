@@ -1,23 +1,22 @@
 if vim.g.loaded_cmp then
+
+local status, cmp = pcall(require, 'cmp')
+if not status then return end
+
 vim.o.completeopt = "menu,menuone,noselect"
 vim.opt.shortmess:append({ c = true })
+vim.o.pumheight = 10
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
 
 cmp.setup({
 
   completion = {
-    --autocomplete = false
+		--autocomplete = false,
 		keyword_length = 3
   },
 
 	--documentation = false,
-	window = {
-				 documentation = false,
-				 completion = cmp.config.window.bordered(),
-			},
-
 	snippet = {
 		expand = function(args)
 			 vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
@@ -48,8 +47,13 @@ cmp.setup({
 			end,
 	},
 
+	window = {
+				 documentation = false,
+				 --completion = cmp.config.window.bordered(),
+			},
+
 	formatting = {
-		format = require("lspkind").cmp_format({with_text = true, menu = ({
+		format = require("lspkind").cmp_format({with_text = false, menu = ({
 				buffer = "[Buffer]",
 				nvim_lsp = "[LSP]",
 				ultisnip = "[UltiSnip]",

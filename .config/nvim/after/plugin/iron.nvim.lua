@@ -1,4 +1,5 @@
-local iron = require("iron.core")
+local status, iron = pcall(require, 'iron.core')
+if not status then return end
 
 iron.setup {
   config = {

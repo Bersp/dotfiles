@@ -1,5 +1,5 @@
-if true then
-local lualine = require('lualine')
+local status, lualine = pcall(require, 'lualine')
+if not status then return end
 
 vim.o.showmode = false
 
@@ -219,4 +219,3 @@ ins_right {
 ins_right { function() return ' ' end }
 
 lualine.setup(config)
-end

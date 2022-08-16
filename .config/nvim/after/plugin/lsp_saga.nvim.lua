@@ -1,9 +1,10 @@
-local saga = require('lspsaga')
+local status, saga = pcall(require, 'lspsaga')
+if not status then return end
 
 saga.init_lsp_saga{
 	--finder_definition_icon = ' ',
 	--finder_reference_icon = ' ',
-	finder_separator = '  ',
+	--finder_separator = '  ',
 	max_preview_lines = 20, -- preview lines of lsp_finder and definition preview
 	finder_action_keys = {
 	 open = 'o', vsplit = 'v', split = 's', quit = '<esc>', scroll_down = '<C-f>', scroll_up = '<C-b>'

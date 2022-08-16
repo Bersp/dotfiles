@@ -101,7 +101,7 @@ hi debugBreakpoint guifg=#bf616a ctermfg=131 guibg=NONE ctermbg=NONE gui=reverse
 hi TSError guifg=#bf616a ctermfg=131 guibg=NONE ctermbg=NONE
 hi TSPunctDelimiter guifg=#81a1c1 ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSPunctBracket guifg=#eceff4 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSPunctSpecial guifg=#eceff4 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TSPunctSpecial guifg=#fceff4 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSConstant guifg=#88c0d0 ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSConstBuiltin guifg=#81a1c1 ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSConstMacro guifg=#8fbcbb ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -139,11 +139,11 @@ hi TSInclude guifg=#81a1c1 ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NO
 hi TSVariable guifg=#e5e9f0 ctermfg=255 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSVariableBuiltin guifg=#81a1c1 ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSText guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TSTitle guifg=#81a1c1 ctermfg=226 guibg=NONE ctermbg=NONE gui=bold cterm=NONE
 hi TSStrong guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSEmphasis guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSUnderline guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSTitle guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi TSLiteral guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TSEmphasis guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=italic cterm=NONE
+hi TSStrike guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=strikethrough cterm=NONE
+hi TSUnderline guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=underline cterm=NONE
 hi TSURI guifg=#ebcb8b ctermfg=226 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSTag guifg=#81a1c1 ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi TSTagDelimiter guifg=#5c6370 ctermfg=241 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -251,3 +251,11 @@ hi LspDiagnosticsUnderlineHint guifg=#5e81ac ctermfg=67 guibg=NONE ctermbg=NONE 
 hi TargetWord guifg=#5e81ac ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspSagaFinderSelection guifg=#a3be8c ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspSagaRenameBorder guifg=#a3be8c ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+
+" VimTex
+hi texDelim guifg=#d8dee9 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi texCmd guifg=#88c0d0 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi texPartArgTitle guifg=#ebcb8b ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi texSpecialChar guifg=#616e88 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi texTitleArg guifg=#ebcb8b ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+

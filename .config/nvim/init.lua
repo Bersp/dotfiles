@@ -24,7 +24,7 @@ require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 -- Essential Plugins
-	use 'scrooloose/nerdcommenter' -- plugin para comentar
+	use 'scrooloose/nerdcommenter' -- commments
 	use 'tpope/vim-surround' -- surround
 	use 'junegunn/fzf.vim' -- fuzzy finder
 	use 'windwp/nvim-autopairs' -- autopairs
@@ -33,36 +33,38 @@ require('packer').startup(function()
 	use 'sirver/ultisnips' -- better snippets (suscribe Tab)
 	use 'tpope/vim-fugitive' -- git plugin
 	use 'lervag/vimtex' -- vimtex
-	use 'michaeljsmith/vim-indent-object' -- indent objects
 	use 'KabbAmine/vCoolor.vim' -- color picker
 	use 'lilydjwg/colorizer' -- colors on files e.g.#000
 	use 'dstein64/vim-startuptime'
-	use 'sbdchd/neoformat' -- format code
 	use 'untitled-ai/jupyter_ascending.vim' -- jupyter
 
 -- Lua Plugins
-	use {'nvim-treesitter/nvim-treesitter'}--, run = ':TSUpdate'}  -- treesitter
+	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}  -- treesitter
 	use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'}} -- statusline
 	use 'hkupty/iron.nvim' -- ipython interaction
 	use {'nvim-telescope/telescope.nvim', -- Telescope
 			 requires = {'nvim-lua/plenary.nvim';
 									 {'kyazdani42/nvim-web-devicons', opt = true}},}
+  use {'nvim-telescope/telescope-file-browser.nvim',
+			 requires = {'nvim-telescope/telescope.nvim'}}
 	use {'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim'}
-	--use {'eddiebergman/nvim-treesitter-pyfold', requires = 'nvim-treesitter/nvim-treesitter'}
-	use {'kyazdani42/nvim-tree.lua', -- folders
-			 requires = {'kyazdani42/nvim-web-devicons'}}
 	use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- folding
-	use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-	
 
--- LSP
+-- LSP based
 	use 'neovim/nvim-lspconfig'
 	use 'glepnir/lspsaga.nvim'
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'williamboman/mason.nvim'
+
+	-- Refactoring
+	use {'ThePrimeagen/refactoring.nvim',
+				requires = {{'nvim-lua/plenary.nvim'},
+										{'nvim-treesitter/nvim-treesitter'}},}
 
 -- Completition
+	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/nvim-cmp'
 	use 'onsails/lspkind-nvim'
 
 -- Writing
@@ -71,7 +73,6 @@ require('packer').startup(function()
 			 run = function() vim.fn["mkdp#util#install"]() end})
 	use 'preservim/vim-pencil'
 	use 'folke/zen-mode.nvim'
-
 
 end)
 -- }}}
@@ -159,10 +160,6 @@ end)
 	map('', '<leader>y', '"+y')
 	map('', '<leader>p', '"+p')
 
-	-- Yank and paste from clipboard
-	map('', '<S-h>', '^')
-	map('', '<S-L>', '$')
-
 	-- Yank to end of the line
 	map('n', '<S-y>', 'y$')
 
@@ -177,6 +174,10 @@ end)
 
 	-- Toggle wrap
 	map('n', '<F11>', ':set wrap!<CR>')
+
+	-- Toggle write mode
+	vim.cmd[[highlight FoldColumn guifg=bg guifg=bg]]
+	map('n', '<F12>', [[<cmd>set relativenumber! | set number! | PencilSoft | set ruler! | if &laststatus | set laststatus=0 | else | set laststatus=3 | endif | if &foldcolumn | set foldcolumn=0 | else | set foldcolumn=1 | endif <CR>]])
 
 
 	-- Sustitude/replace word under de cursor TODO: Pasar a lua

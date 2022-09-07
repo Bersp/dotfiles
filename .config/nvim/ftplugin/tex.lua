@@ -7,17 +7,17 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<Leader><CR>', '<cmd>VimtexCompile<CR>', ke
 vim.api.nvim_buf_set_keymap(0, 'n', '<Leader><Leader><CR>', '<cmd>VimtexView<CR>', keymap_opt)
 
 
+require('latex/latex_functions')
+
 -- Latex sections
-require('latex/latex_sections')
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ln', ':call v:lua.latex_new_section()<CR>', keymap_opt)
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ll', ':call v:lua.latex_section_picker()<CR>', keymap_opt)
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>lm', ':e main.tex<CR>', keymap_opt)
 
 
 -- Latex screenshots
-require('latex/screenshots_to_latex')
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ls', ':call v:lua.save_last_screenshot()<CR>', keymap_opt)
-vim.api.nvim_buf_set_keymap(0, 'n', '<leader>l<S-s>', ':call v:lua.subscribe_screenshot()<CR>', keymap_opt)
+vim.api.nvim_buf_set_keymap(0, 'n', '<leader>l<S-s>', ':call v:lua.latex_figures_picker()<CR>', keymap_opt)
 
 
 -- Inkscape-figures

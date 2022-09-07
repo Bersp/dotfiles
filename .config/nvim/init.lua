@@ -141,6 +141,8 @@ end)
 		au WinEnter * setlocal cursorline
 		au BufWinEnter * setlocal cursorline
 		au WinLeave * setlocal nocursorline
+		au FileType TelescopePrompt setlocal nocursorline
+		au FileType TelescopeResults setlocal nocursorline
 	augroup END
 	]]
 
@@ -180,15 +182,16 @@ end)
 	map('n', '<F12>', [[<cmd>set relativenumber! | set number! | PencilSoft | set ruler! | if &laststatus | set laststatus=0 | else | set laststatus=3 | endif | if &foldcolumn | set foldcolumn=0 | else | set foldcolumn=1 | endif <CR>]])
 
 
-	-- Sustitude/replace word under de cursor TODO: Pasar a lua
-	map('n', '<Leader>s', ':%s/\\<<C-r><C-w>\\>//<Left>')
+	map('n', '<Leader>s', ':%s/\\<<C-r><C-w>\\>/')
+
+	map('n', '<Leader><S-s>', [[:'<,'>s/\<<C-r><C-w>\>/]])
 
 	-- Highlight search results TODO: Pasar a lua
 	vim.cmd[[nmap <Leader>h :set hls! <CR> :echo "Highlight search change" <CR>h]]
 
 	-- Normal-mode in Terminal-mode (and not in fzf) TODO: Pasar a lua
 	vim.cmd[[autocmd TermOpen * tnoremap <Esc> <c-\><c-n>]]
-	vim.cmd[[autocmd TermOpen * nnoremap <CR> i<CR>]]
+	--vim.cmd[[autocmd TermOpen * nnoremap <CR> i<CR>]]
 -- }}}
 
 -- UltiSnips config (odio tener que poner esto acá) {{{

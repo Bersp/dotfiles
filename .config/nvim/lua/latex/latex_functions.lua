@@ -22,6 +22,8 @@ actions.delete_file = function(prompt_bufnr)
 	vim.cmd('echo "File removed: ' .. selected_entry .. '"')
 end
 
+-- Sections
+
 actions.rename_section = function(prompt_bufnr)
 	local old_filename_path = action_state.get_selected_entry()[1]
 	actions.close(prompt_bufnr)
@@ -128,6 +130,8 @@ function _G.latex_section_picker()
 		})
 		:find()
 end
+
+-- Sections
 
 actions.rename_figure = function(prompt_bufnr)
 	local old_filename_path = action_state.get_selected_entry()[1]

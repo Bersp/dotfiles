@@ -159,18 +159,25 @@ actions.rename_figure = function(prompt_bufnr)
 	end
 end
 
-actions.includefigure = function(prompt_bufnr)
+actions.include_figure = function(prompt_bufnr)
 	local fig_path = action_state.get_selected_entry()[1]
 	actions.close(prompt_bufnr)
 
 	local text = {
 		"\\begin{figure}[ht]",
 		"    \\centering",
-		"    \\includegraphics[width=0.5\\textwidth]{" .. fig_path .. "}",
+		"    \\includegraphics[width=0.5\\linewidth]{" .. fig_path .. "}",
 		"\\end{figure}",
 	}
 	local current_line = vim.api.nvim_win_get_cursor(0)[1]
 	vim.api.nvim_buf_set_lines(0, current_line, current_line, false, text)
+end
+
+actions.edit_figure = function(prompt_bufnr)
+	local fig_path = action_state.get_selected_entry()[1]
+	actions.close(prompt_bufnr)
+
+	vim.fn.system("gimp " .. fig_path .. " &")
 end
 
 function _G.latex_figures_picker()
@@ -193,7 +200,8 @@ function _G.latex_figures_picker()
 			attach_mappings = function(_, map)
 				map("i", "<c-d>", actions.delete_file)
 				map("i", "<c-r>", actions.rename_figure)
-				map("i", "<CR>", actions.includefigure)
+				map("i", "<c-e>", actions.edit_figure)
+				map("i", "<CR>", actions.include_figure)
 
 				return true
 			end,
@@ -218,7 +226,7 @@ function _G.save_last_screenshot()
 	local text = {
 		"\\begin{figure}[ht]",
 		"    \\centering",
-		"    \\includegraphics[width=0.5\\textwidth]{" .. fig_path .. "}",
+		"    \\includegraphics[width=0.5\\linewidth]{" .. fig_path .. "}",
 		"\\end{figure}",
 	}
 	local current_line = vim.api.nvim_win_get_cursor(0)[1]

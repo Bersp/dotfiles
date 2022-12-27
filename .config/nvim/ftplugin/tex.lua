@@ -9,6 +9,10 @@ keymap_opt = {noremap = true}
 vim.api.nvim_buf_set_keymap(0, 'n', '<Leader><CR>', '<cmd>VimtexCompile<CR>', keymap_opt)
 vim.api.nvim_buf_set_keymap(0, 'n', '<Leader><Leader><CR>', '<cmd>VimtexView<CR>', keymap_opt)
 
+-- TOC and errorstoggle
+vim.api.nvim_buf_set_keymap(0, 'n', '<F2>', '<cmd>VimtexTocOpen<CR>', keymap_opt)
+vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', '<cmd>VimtexErrors<CR>', keymap_opt)
+
 
 require('latex/latex_functions')
 

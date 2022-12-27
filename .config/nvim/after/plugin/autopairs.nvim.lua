@@ -48,11 +48,6 @@ require('nvim-treesitter.configs').setup {
     autopairs = {enable = true}
 }
 
-local ts_conds = require('nvim-autopairs.ts-conds')
-
-
--- Latex
-npairs.add_rule(Rule("$","$","tex"))
 
 -- Compe
 if vim.g.loaded_compe then

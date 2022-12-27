@@ -1,6 +1,6 @@
 -- Functions
 function _G.python_compiler()
-	vim.cmd([[nmap <buffer> <Leader><CR> :update<bar>!python3 '%' \| less<CR>]])
+	vim.cmd([[nmap <buffer> <Leader><CR> :update<bar>!python '%' \| less<CR>]])
 	vim.cmd([[nmap <buffer> <Leader><Leader><CR> :update<bar>bo sp <bar> resize 10 <bar> ter ipython '%' <CR> <bar> <S-g>]])
 end
 

@@ -3,6 +3,8 @@ local finders = require("telescope.finders")
 local pickers = require("telescope.pickers")
 local sorters = require("telescope.sorters")
 local action_state = require("telescope.actions.state")
+local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 function file_exists(filename)
 	local file = io.open(filename, "r")
@@ -105,10 +107,11 @@ function _G.latex_new_section()
 end
 
 function _G.latex_section_picker()
-	local f = io.popen("find sections")
+	opts = opts or {}
 
 	sections_array = {}
 
+	local f = io.popen("find sections")
 	i = 0 -- start from 0 becouse I want to skip the first value of f:lines()
 	for section in f:lines() do
 		sections_array[i] = section
@@ -116,7 +119,7 @@ function _G.latex_section_picker()
 	end
 
 	pickers
-		.new(opts, {
+		.new(themes.get_ivy({}), {
 			prompt_title = "Sections",
 			finder = finders.new_table(sections_array),
 			sorter = sorters.get_fuzzy_file(),
@@ -131,7 +134,7 @@ function _G.latex_section_picker()
 		:find()
 end
 
--- Sections
+-- Figure
 
 actions.rename_figure = function(prompt_bufnr)
 	local old_filename_path = action_state.get_selected_entry()[1]
@@ -181,10 +184,9 @@ actions.edit_figure = function(prompt_bufnr)
 end
 
 function _G.latex_figures_picker()
-	local f = io.popen("find figs")
-
 	sections_array = {}
 
+	local f = io.popen("find figs")
 	i = 0 -- start from 0 becouse I want to skip the first value of f:lines()
 	for section in f:lines() do
 		sections_array[i] = section
@@ -192,7 +194,7 @@ function _G.latex_figures_picker()
 	end
 
 	pickers
-		.new(opts, {
+		.new(themes.get_ivy({}), {
 			prompt_title = "Figures",
 			finder = finders.new_table(sections_array),
 			sorter = sorters.get_fuzzy_file(),

@@ -25,12 +25,32 @@ local lspconfig = {
 		-- Lua
 		nvim_lsp.sumneko_lua.setup({})
 
+		-- Fortran
+		nvim_lsp.fortls.setup({})
+
 		-- Latex
 		nvim_lsp.texlab.setup({})
 
 		-- Javascript
 		nvim_lsp.eslint.setup({})
 		nvim_lsp.tsserver.setup({})
+
+		-- HTML and CSS
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		require("lspconfig").html.setup({
+			capabilities = capabilities,
+			configurationSection = { "html", "css", "javascript" },
+			embeddedLanguages = {
+				css = true,
+				javascript = true,
+			},
+			provideFormatter = true,
+		})
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+		require'lspconfig'.cssls.setup {
+			capabilities = capabilities,
+		}
 
 		-- Config on_atach
 		local on_attach = function(client, bufnr) end

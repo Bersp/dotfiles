@@ -108,7 +108,7 @@ vim.keymap.set("", "<leader>p", '"+p')
 vim.keymap.set("n", "<S-y>", "y$")
 
 -- Open and select buffers
-vim.keymap.set("n", "gb", ":ls<cr>:buffer<space>")
+--vim.keymap.set("n", "gb", ":ls<cr>:buffer<space>")
 
 -- Split navegation
 vim.keymap.set("n", "<C-j>", "<C-w>j")

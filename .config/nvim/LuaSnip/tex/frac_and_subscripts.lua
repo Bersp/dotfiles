@@ -8,7 +8,6 @@ local snippets = {
 
 ls.add_snippets("tex", snippets, { type = "autosnippets" })
 
-
 local frac_no_parens = {
 	f(function(_, snip)
 		return string.format("\\frac{%s}", snip.captures[1])
@@ -68,8 +67,28 @@ local _snippets = {
 	}),
 
 	s({
-		trig = "([%a])_(%w%w)",
+		trig = "([A-Za-z])_(%w%w)",
 		name = "auto subscript 2",
+	}, {
+		f(function(_, snip)
+			return string.format("%s_{%s}", snip.captures[1], snip.captures[2])
+		end, {}),
+		i(0),
+	}),
+
+	s({
+		trig = "(\\%w+)_(%w%w)",
+		name = "auto subscript 3",
+	}, {
+		f(function(_, snip)
+			return string.format("%s_{%s}", snip.captures[1], snip.captures[2])
+		end, {}),
+		i(0),
+	}),
+
+	s({
+		trig = "(})_(%w%w)",
+		name = "auto subscript 4",
 	}, {
 		f(function(_, snip)
 			return string.format("%s_{%s}", snip.captures[1], snip.captures[2])

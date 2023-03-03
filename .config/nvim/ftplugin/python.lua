@@ -36,6 +36,9 @@ function _G.manim_compiler(compiler)
 
 	if compiler == 'manim' then
 		play_cmd = '-p'
+	elseif compiler == 'manim_img' then
+		compiler = 'manim'
+		play_cmd = ''
 	elseif compiler == 'manimgl' then
 		play_cmd = '-o'
 	end
@@ -82,7 +85,11 @@ _G.python_compiler()
 local all_lines = vim.api.nvim_buf_get_lines(0, 0, -1, true)
 for i, l in ipairs(all_lines) do
 	if l:find('from manim import *') ~= nil then
-		_G.manim_compiler('manim')
+		if l:find('# IMG EXPORT') then
+			_G.manim_compiler('manim_img')
+		else
+			_G.manim_compiler('manim')
+		end
 	elseif l:find('from manimlib import *') ~= nil then
 		_G.manim_compiler('manimgl')
 	elseif l:find('jupytext') ~= nil then

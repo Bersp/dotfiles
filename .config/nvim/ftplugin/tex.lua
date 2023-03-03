@@ -13,6 +13,10 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<Leader><Leader><CR>', '<cmd>VimtexView<CR>
 vim.api.nvim_buf_set_keymap(0, 'n', '<F2>', '<cmd>VimtexTocOpen<CR>', keymap_opt)
 vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', '<cmd>VimtexErrors<CR>', keymap_opt)
 
+-- Toggle left right brackets
+vim.api.nvim_buf_set_keymap(0, 'n', '<C-b>', [[<Plug>(vimtex-delim-toggle-modifier)]], keymap_opt)
+vim.api.nvim_buf_set_keymap(0, 'i', '<C-b>', [[<esc><Plug>(vimtex-delim-toggle-modifier)a]], keymap_opt)
+
 
 require('latex/latex_functions')
 
@@ -23,8 +27,8 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<leader>lm', ':e main.tex<CR>', keymap_opt)
 
 
 -- Latex screenshots
-vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ls', ':call v:lua.save_last_screenshot()<CR>', keymap_opt)
-vim.api.nvim_buf_set_keymap(0, 'n', '<leader>l<S-s>', ':call v:lua.latex_figures_picker()<CR>', keymap_opt)
+vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ls', ':call v:lua.latex_figures_picker()<CR>', keymap_opt)
+vim.api.nvim_buf_set_keymap(0, 'n', '<leader>l<S-s>', ':call v:lua.save_last_screenshot()<CR>', keymap_opt)
 
 
 -- Inkscape-figures

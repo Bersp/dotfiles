@@ -7,6 +7,7 @@ vim.keymap.set("n", "z=", ":Telescope spell_suggest<CR>", { noremap = true })
 
 local telescope_f = {
 	"nvim-telescope/telescope.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
@@ -47,6 +48,7 @@ local telescope_f = {
 				spell_suggest = { theme = "ivy" },
 				lsp_definitions = { theme = "ivy" },
 				lsp_references = { theme = "ivy" },
+				buffers = { theme = "ivy" },
 			},
 			extensions = {
 				fzy_native = {

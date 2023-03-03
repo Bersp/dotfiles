@@ -3,7 +3,7 @@ local utils = require("utils")
 
 local vec_node = {
 	f(function(_, snip)
-		return string.format("\\vb{%s} ", snip.captures[1])
+		return string.format("\\vb{%s}", snip.captures[1])
 	end, {}),
 }
 

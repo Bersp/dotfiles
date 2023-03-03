@@ -23,9 +23,9 @@ cmp_f.config = function()
 		--documentation = false,
 		snippet = {
 			expand = function(args)
-			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-			-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-		end,
+				require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+				-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+			end,
 		},
 
 		mapping = {
@@ -77,7 +77,7 @@ cmp_f.config = function()
 
 		sources = {
 			{ name = "nvim_lsp" },
-			-- { name = 'buffer' },
+			{ name = "luasnip" },
 			--{ name = 'ultisnips' }, -- For ultisnips users.
 		},
 	})

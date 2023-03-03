@@ -36,6 +36,10 @@ local _snippets = {
 	s({ trig = "eval" }, fmta([[\eval{<>}_{<>}<>]], { v(1), i(2), i(0) })),
 
 	s({ trig = "und" }, fmta([[\underbrace{<>}_{<>}]], { v(1), i(0) })),
+
+	s({ trig = "bb", wordTrig = false, snippetType = "autosnippet" }, fmta("(<>)", { i(0) })),
+	s({ trig = "BB", wordTrig = false, snippetType = "autosnippet" }, fmta("[<>]", { i(0) })),
+	s({ trig = "cb", wordTrig = false, snippetType = "autosnippet" }, fmta("{<>}", { i(0) })),
 }
 
 snippets = {}

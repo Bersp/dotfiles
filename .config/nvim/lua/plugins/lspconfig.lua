@@ -1,16 +1,12 @@
 vim.keymap.set("n", "<leader>gd", "<cmd>Telescope lsp_definitions<cr>")
 vim.keymap.set("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>")
-vim.keymap.set("n", "<leader>R", function()
-	return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true })
 
 local lspconfig = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"smjonas/inc-rename.nvim",
 	},
 	config = function()
-		require("inc_rename").setup()
+		--require("inc_rename").setup()
 		nvim_lsp = require("lspconfig")
 
 		-- Python

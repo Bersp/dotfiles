@@ -23,6 +23,9 @@ local telescope_f = {
 					n = { ["<c-d>"] = actions.close },
 				},
 				file_ignore_patterns = {
+					"main",
+					"%.o",
+					"%.mod",
 					"%.aux",
 					"%.gz",
 					"%.log",
@@ -65,6 +68,9 @@ local telescope_f = {
 							["/"] = function()
 								vim.cmd("startinsert")
 							end,
+						},
+						["i"] = {
+							["<C-h>"] = fb_actions.goto_parent_dir,
 						},
 					},
 				},

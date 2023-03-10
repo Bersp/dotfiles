@@ -1,7 +1,7 @@
 return {
 	"hkupty/iron.nvim",
-	config = function ()
-		require('iron.core').setup({
+	config = function()
+		require("iron.core").setup({
 			config = {
 				-- If iron should expose `<plug>(...)` mappings for the plugins
 				should_map_plug = false,
@@ -25,5 +25,5 @@ return {
 				italic = false,
 			},
 		})
-	end
+	end,
 }

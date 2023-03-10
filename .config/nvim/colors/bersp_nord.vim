@@ -251,6 +251,7 @@ hi LspDiagnosticsUnderlineHint guifg=#5e81ac ctermfg=67 guibg=NONE ctermbg=NONE 
 hi TargetWord guifg=#5e81ac ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspSagaFinderSelection guifg=#a3be8c ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LspSagaRenameBorder guifg=#a3be8c ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi SagaWinbarSep guifg=#616e88 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
 " VimTex
 hi texDelim guifg=#d8dee9 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

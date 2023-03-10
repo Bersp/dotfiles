@@ -94,7 +94,7 @@ cmd([[
 	]])
 
 -- Show  name of the file on the top right corner
-opt.winbar = [[%=%m %f ]]
+--opt.winbar = [[%m %f ]]
 
 -- }}}
 

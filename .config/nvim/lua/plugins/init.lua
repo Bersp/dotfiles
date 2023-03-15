@@ -4,7 +4,6 @@ return {
 	"tpope/vim-fugitive",
 	"lilydjwg/colorizer", -- colors on files e.g.#000
 	-- "untitled-ai/jupyter_ascending.vim",
-	--"phelipetls/vim-hugo",
 
 	{
 		"scrooloose/nerdcommenter",

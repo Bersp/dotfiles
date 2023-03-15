@@ -21,6 +21,6 @@ return {
 			},
 			ui = { kind = { ["Folder"] = { "%m   ", "Normal" } } },
 		})
-		vim.opt.winbar = [[%#SagaWinbarFolder# %m  %*%#SagaWinbarFolderName#%{expand('%:F:h:t')}%*%#SagaWinbarSep#  %*%#SagaWinbarFileIcon# %*%#SagaWinbarFileName#%t]]
+		vim.opt.winbar = [[%#SagaWinbarFolder# %m  %*%#SagaWinbarFolderName#%{expand('%:p:h:t')}%*%#SagaWinbarSep#  %*%#SagaWinbarFileIcon# %*%#SagaWinbarFileName#%t]]
 	end,
 }

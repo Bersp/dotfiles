@@ -18,7 +18,7 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<C-b>', [[<Plug>(vimtex-delim-toggle-modifi
 vim.api.nvim_buf_set_keymap(0, 'i', '<C-b>', [[<esc><Plug>(vimtex-delim-toggle-modifier)a]], keymap_opt)
 
 
-require('latex/latex_functions')
+require('latex_functions')
 
 -- Latex sections
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>ln', ':call v:lua.latex_new_section()<CR>', keymap_opt)

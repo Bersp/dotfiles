@@ -259,4 +259,3 @@ hi texCmd guifg=#88c0d0 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi texPartArgTitle guifg=#ebcb8b ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi texSpecialChar guifg=#616e88 ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi texTitleArg guifg=#ebcb8b ctermfg=67 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-
